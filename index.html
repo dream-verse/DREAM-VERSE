@@ -418,7 +418,7 @@
         <li>1 round of revisions</li>
         <li>Delivery in 24 hrs</li>
       </ul>
-      <a href="mailto:dreameverse.web@gmail.com?subject=Starter Plan Order" class="btn-pricing-primary">Get Started</a>
+      <a href="mailto:dreamverse.web@gmail.com?subject=Starter Plan Order" class="btn-pricing-primary">Get Started</a>
     </div>
     <div class="pricing-card featured reveal reveal-delay-1">
       <span class="pricing-badge">Most Popular</span>
@@ -433,7 +433,7 @@
         <li>Priority delivery</li>
         <li>Custom domain setup</li>
       </ul>
-      <a href="mailto:dreameverse.web@gmail.com?subject=Premium Plan Order" class="btn-pricing-primary">Get Started</a>
+      <a href="mailto:dreamverse.web@gmail.com?subject=Premium Plan Order" class="btn-pricing-primary">Get Started</a>
     </div>
     <div class="pricing-card reveal reveal-delay-2">
       <p class="pricing-tier">Custom</p>
@@ -461,7 +461,7 @@
       <p class="section-desc reveal reveal-delay-2" style="margin-bottom:2.5rem">Have a question, a special request, or just want to say hello? We'd love to hear from you.</p>
       <div class="contact-method reveal reveal-delay-2">
         <div class="contact-icon">✉</div>
-        <div><p class="contact-label">Email</p><p class="contact-value"><a href="mailto:dreameverse.web@gmail.com">dreameverse.web@gmail.com</a></p></div>
+        <div><p class="contact-label">Email</p><p class="contact-value"><a href="mailto:dreamverse.web@gmail.com">dreamverse.web@gmail.com</a></p></div>
       </div>
       <div class="contact-method reveal reveal-delay-3">
         <div class="contact-icon">◎</div>
@@ -503,7 +503,7 @@
       <a href="https://www.instagram.com/dreamverse.web/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
       </a>
-      <a href="mailto:dreameverse.web@gmail.com" class="social-link" aria-label="Email">
+      <a href="mailto:dreamverse.web@gmail.com" class="social-link" aria-label="Email">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
       </a>
     </div>
@@ -650,7 +650,7 @@ function renderCards() {
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 3h9M1 5.5h9M1 8h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
                 View Versions
               </button>
-              <a href="mailto:dreameverse.web@gmail.com?subject=Order: ${t.name}" class="btn-order-now">Order Now</a>
+              <a href="mailto:dreamverse.web@gmail.com?subject=Order: ${t.name}" class="btn-order-now">Order Now</a>
             </div>
           </div>
         </div>
@@ -666,7 +666,7 @@ function openModal(id) {
   document.getElementById('modal-emoji').textContent = t.emoji;
   document.getElementById('modal-title').textContent = t.name + ' Collection';
   document.getElementById('modal-subtitle').textContent = 'Choose a version to preview or order';
-  document.getElementById('modal-order-btn').href = `mailto:dreameverse.web@gmail.com?subject=Order: ${t.name}`;
+  document.getElementById('modal-order-btn').href = `mailto:dreamverse.web@gmail.com?subject=Order: ${t.name}`;
 
   const list = document.getElementById('versions-list');
   list.innerHTML = t.versions.map(v => {
@@ -739,7 +739,7 @@ function handleInquiry(e) {
   const vision = document.getElementById('inq-vision').value;
   const sub = encodeURIComponent('Custom Website Inquiry — ' + type);
   const body = encodeURIComponent(`Hi DREAMVERSE,\n\nName: ${name}\nEmail: ${email}\nType: ${type}\n\nVision:\n${vision}`);
-  window.location.href = `mailto:dreameverse.web@gmail.com?subject=${sub}&body=${body}`;
+  window.location.href = `mailto:dreamverse.web@gmail.com?subject=${sub}&body=${body}`;
   showToast('Opening your email app…');
 }
 function handleContact(e) {
@@ -749,7 +749,7 @@ function handleContact(e) {
   const msg = document.getElementById('ct-msg').value;
   const sub = encodeURIComponent('Message from ' + name + ' via DREAMVERSE');
   const body = encodeURIComponent(`Hi DREAMVERSE,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
-  window.location.href = `mailto:dreameverse.web@gmail.com?subject=${sub}&body=${body}`;
+  window.location.href = `mailto:dreamverse.web@gmail.com?subject=${sub}&body=${body}`;
   showToast('Opening your email app…');
 }
 
