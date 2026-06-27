@@ -291,6 +291,113 @@
     *, *::before, *::after { transition-duration: 0.01ms !important; }
     .reveal { opacity: 1; transform: none; }
   }
+
+  /* ── ORDER MODAL ── */
+  .order-overlay {
+    position: fixed; inset: 0; z-index: 600;
+    background: rgba(15,25,20,0.6); backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s var(--ease);
+  }
+  .order-overlay.active { opacity: 1; pointer-events: all; }
+  .order-box {
+    background: var(--cream); border-radius: 24px;
+    width: 100%; max-width: 580px; max-height: 92vh; overflow-y: auto;
+    box-shadow: 0 40px 100px rgba(27,67,50,0.25);
+    transform: translateY(30px) scale(0.97);
+    transition: transform 0.38s var(--ease);
+    position: relative;
+  }
+  .order-overlay.active .order-box { transform: translateY(0) scale(1); }
+  .order-box-header {
+    padding: 2rem 2rem 1.2rem;
+    border-bottom: 1px solid rgba(27,67,50,0.08);
+    position: sticky; top: 0; background: var(--cream);
+    border-radius: 24px 24px 0 0; z-index: 2;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  }
+  .order-box-header-text {}
+  .order-box-eyebrow { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--forest); font-weight: 500; margin-bottom: 0.3rem; }
+  .order-box-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; color: var(--charcoal); line-height: 1.2; }
+  .order-close {
+    width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(27,67,50,0.08); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--forest); font-size: 1rem; transition: var(--transition); margin-top: 2px;
+  }
+  .order-close:hover { background: rgba(27,67,50,0.16); transform: rotate(90deg); }
+  .order-body { padding: 1.6rem 2rem 2rem; }
+
+  /* Auto-filled pills */
+  .auto-fields { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.4rem; }
+  .auto-field {
+    background: rgba(27,67,50,0.06); border: 1px solid rgba(27,67,50,0.1);
+    border-radius: 10px; padding: 0.7rem 0.9rem;
+  }
+  .auto-field-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; margin-bottom: 0.2rem; }
+  .auto-field-value { font-size: 0.88rem; font-weight: 500; color: var(--forest); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Order form fields */
+  .order-form .form-group label { color: var(--text-muted); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+  .order-form .form-group input,
+  .order-form .form-group select,
+  .order-form .form-group textarea {
+    background: #fff; border: 1px solid rgba(27,67,50,0.15);
+    color: var(--charcoal); border-radius: 10px;
+  }
+  .order-form .form-group input::placeholder,
+  .order-form .form-group textarea::placeholder { color: var(--beige-dark); }
+  .order-form .form-group input:focus,
+  .order-form .form-group select:focus,
+  .order-form .form-group textarea:focus { border-color: rgba(27,67,50,0.4); background: #fff; box-shadow: 0 0 0 3px rgba(27,67,50,0.06); outline: none; }
+  .order-form .form-group select { -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%231B4332' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+  .order-form .form-group select option { background: #fff; color: var(--charcoal); }
+  .order-form textarea { min-height: 110px; resize: vertical; }
+  .order-divider { height: 1px; background: rgba(27,67,50,0.08); margin: 1.3rem 0; }
+  .order-section-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--forest); font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .order-section-label::after { content: ''; flex: 1; height: 1px; background: rgba(27,67,50,0.1); }
+  .btn-submit-order {
+    width: 100%; padding: 1rem; background: var(--forest);
+    border: none; border-radius: 50px; color: var(--cream);
+    font-family: var(--font-body); font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; transition: var(--transition); margin-top: 0.5rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .btn-submit-order:hover { background: var(--forest-light); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(27,67,50,0.22); }
+  .optional-badge { font-size: 0.65rem; background: rgba(149,213,178,0.3); color: var(--forest); padding: 0.15rem 0.5rem; border-radius: 10px; font-weight: 500; margin-left: 0.4rem; vertical-align: middle; }
+
+  /* ── SUCCESS POPUP ── */
+  .success-overlay {
+    position: fixed; inset: 0; z-index: 700;
+    background: rgba(15,25,20,0.65); backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s var(--ease);
+  }
+  .success-overlay.active { opacity: 1; pointer-events: all; }
+  .success-box {
+    background: #fff; border-radius: 24px; padding: 2.8rem 2.4rem;
+    text-align: center; max-width: 400px; width: 100%;
+    box-shadow: 0 40px 100px rgba(27,67,50,0.25);
+    transform: scale(0.9);
+    transition: transform 0.4s var(--ease);
+  }
+  .success-overlay.active .success-box { transform: scale(1); }
+  .success-icon { font-size: 3.2rem; margin-bottom: 1rem; display: block; }
+  .success-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; color: var(--forest); margin-bottom: 0.5rem; }
+  .success-msg { font-size: 0.88rem; color: var(--text-body); line-height: 1.7; font-weight: 300; margin-bottom: 1.6rem; }
+  .success-order-id {
+    background: rgba(27,67,50,0.06); border: 1px solid rgba(27,67,50,0.12);
+    border-radius: 12px; padding: 1rem 1.4rem; margin-bottom: 1.8rem;
+  }
+  .success-order-id-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.3rem; }
+  .success-order-id-value { font-family: var(--font-display); font-size: 1.8rem; font-weight: 500; color: var(--forest); }
+  .btn-success-close { padding: 0.8rem 2.5rem; background: var(--forest); color: var(--cream); border: none; border-radius: 50px; font-family: var(--font-body); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: var(--transition); }
+  .btn-success-close:hover { background: var(--forest-light); transform: translateY(-1px); }
 </style>
 </head>
 <body>
@@ -526,8 +633,110 @@
         <span class="price-from">Starting From</span>
         <span class="price-amount">₹299</span>
       </div>
-      <a href="#" id="modal-order-btn" class="btn-modal-order">Order Now</a>
+      <button class="btn-modal-order" id="modal-order-btn" onclick="openOrderForm(event, currentModalId, '')">Order Now</button>
     </div>
+  </div>
+</div>
+
+<!-- ORDER FORM MODAL -->
+<div class="order-overlay" id="order-overlay" role="dialog" aria-modal="true" aria-labelledby="order-title">
+  <div class="order-box">
+    <div class="order-box-header">
+      <div class="order-box-header-text">
+        <p class="order-box-eyebrow">Place Your Order</p>
+        <h2 class="order-box-title" id="order-title">Order Template</h2>
+      </div>
+      <button class="order-close" id="order-close" aria-label="Close">✕</button>
+    </div>
+    <div class="order-body">
+
+      <!-- Auto-filled info -->
+      <div class="auto-fields">
+        <div class="auto-field">
+          <p class="auto-field-label">Template</p>
+          <p class="auto-field-value" id="af-template">—</p>
+        </div>
+        <div class="auto-field">
+          <p class="auto-field-label">Version</p>
+          <p class="auto-field-value" id="af-version">—</p>
+        </div>
+        <div class="auto-field">
+          <p class="auto-field-label">Price</p>
+          <p class="auto-field-value" id="af-price">₹299</p>
+        </div>
+      </div>
+
+      <form class="order-form" id="order-form" onsubmit="submitOrder(event)">
+
+        <p class="order-section-label">Customer Details</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ord-name">Full Name</label>
+            <input type="text" id="ord-name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="ord-email">Email Address</label>
+            <input type="email" id="ord-email" placeholder="you@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ord-whatsapp">WhatsApp Number</label>
+          <input type="tel" id="ord-whatsapp" placeholder="+91 98765 43210" required>
+        </div>
+
+        <div class="order-divider"></div>
+        <p class="order-section-label">Delivery Details</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ord-delivery">Delivery Needed By</label>
+            <select id="ord-delivery" required>
+              <option value="" disabled selected>Select timeline</option>
+              <option>Within 24 Hours</option>
+              <option>Within 2 Days</option>
+              <option>Within 3 Days</option>
+              <option>Within 5 Days</option>
+              <option>Within 7 Days</option>
+              <option>No Hurry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ord-occasion">Occasion Date <span class="optional-badge">Optional</span></label>
+            <input type="date" id="ord-occasion">
+          </div>
+        </div>
+
+        <div class="order-divider"></div>
+        <p class="order-section-label">Requirements</p>
+
+        <div class="form-group">
+          <label for="ord-requirements">Describe Your Requirements</label>
+          <textarea id="ord-requirements" placeholder="Describe everything you want in your website — names, photos, messages, colors, special features, anything…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-order">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Submit Order
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS POPUP -->
+<div class="success-overlay" id="success-overlay">
+  <div class="success-box">
+    <span class="success-icon">✅</span>
+    <h2 class="success-title">Order Submitted!</h2>
+    <p class="success-msg">Your request has been sent to DREAMVERSE.<br>We will contact you soon via WhatsApp or Email.</p>
+    <div class="success-order-id">
+      <p class="success-order-id-label">Your Order ID</p>
+      <p class="success-order-id-value" id="success-order-id">DV-1001</p>
+    </div>
+    <button class="btn-success-close" onclick="closeSuccess()">Done</button>
   </div>
 </div>
 
@@ -548,7 +757,7 @@ const TEMPLATES = [
     desc: "A heartfelt, interactive birthday experience with animated reveals, countdown timer, and personalised messages to make someone's day unforgettable.",
     versions: [
       { label: "Birthday-Surprise-V1", status: "live", url: "https://dream-verse.github.io/BarthWEB1/" },
-      { label: "Birthday-Surprise-V2", status: "live", url: "https://dream-verse.github.io/BARTHDAY-V2/" },
+      { label: "Birthday-Surprise-V2", status: "soon" },
       { label: "Birthday-Surprise-V3", status: "soon" },
       { label: "Birthday-Surprise-V4", status: "soon" }
     ]
@@ -625,6 +834,13 @@ const TEMPLATES = [
   }
 ];
 
+// ── Order ID generator ──
+function generateOrderId() {
+  const base = 1001;
+  const rand = Math.floor(Math.random() * 9000);
+  return 'DV-' + (base + rand);
+}
+
 // ── Render Template Cards ──
 function renderCards() {
   const grid = document.getElementById('templates-grid');
@@ -650,7 +866,7 @@ function renderCards() {
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 3h9M1 5.5h9M1 8h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
                 View Versions
               </button>
-              <a href="mailto:dreamverse.web@gmail.com?subject=Order: ${t.name}" class="btn-order-now">Order Now</a>
+              <button class="btn-order-now" onclick="openOrderForm(event,'${t.id}','')">Order Now</button>
             </div>
           </div>
         </div>
@@ -658,15 +874,16 @@ function renderCards() {
   });
 }
 
-// ── Modal Logic ──
+// ── Version Modal ──
+let currentModalId = '';
 function openModal(id) {
+  currentModalId = id;
   const t = TEMPLATES.find(x => x.id === id);
   if (!t) return;
 
   document.getElementById('modal-emoji').textContent = t.emoji;
   document.getElementById('modal-title').textContent = t.name + ' Collection';
   document.getElementById('modal-subtitle').textContent = 'Choose a version to preview or order';
-  document.getElementById('modal-order-btn').href = `mailto:dreamverse.web@gmail.com?subject=Order: ${t.name}`;
 
   const list = document.getElementById('versions-list');
   list.innerHTML = t.versions.map(v => {
@@ -677,10 +894,13 @@ function openModal(id) {
             <p class="version-name">${v.label}</p>
             <span class="version-status-live">Live</span>
           </div>
-          <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="btn-live-demo">
-            Live Demo
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
+            <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="btn-live-demo">
+              Live Demo
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <button class="btn-order-now" style="padding:0.5rem 1rem;font-size:0.76rem" onclick="openOrderForm(event,'${t.id}','${v.label}')">Order</button>
+          </div>
         </div>`;
     } else {
       return `
@@ -707,7 +927,115 @@ document.getElementById('modal-close').addEventListener('click', closeModal);
 document.getElementById('modal-overlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modal-overlay')) closeModal();
 });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeOrderForm(); } });
+
+// ── Order Form Modal ──
+let currentOrderTemplate = '';
+let currentOrderVersion = '';
+
+function openOrderForm(e, templateId, versionLabel) {
+  if (e) e.preventDefault();
+  const t = TEMPLATES.find(x => x.id === templateId);
+  if (!t) return;
+
+  currentOrderTemplate = t.name;
+  currentOrderVersion = versionLabel || (t.versions.find(v => v.status === 'live')?.label || t.name + '-V1');
+
+  // Fill auto fields
+  document.getElementById('af-template').textContent = t.name;
+  document.getElementById('af-version').textContent = currentOrderVersion;
+  document.getElementById('af-price').textContent = '₹299';
+  document.getElementById('order-title').textContent = 'Order ' + t.name;
+
+  // Reset form
+  document.getElementById('order-form').reset();
+
+  // Close version modal if open
+  document.getElementById('modal-overlay').classList.remove('active');
+
+  document.getElementById('order-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOrderForm() {
+  document.getElementById('order-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('order-close').addEventListener('click', closeOrderForm);
+document.getElementById('order-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('order-overlay')) closeOrderForm();
+});
+
+// ── Submit Order ──
+function submitOrder(e) {
+  e.preventDefault();
+
+  const name      = document.getElementById('ord-name').value.trim();
+  const email     = document.getElementById('ord-email').value.trim();
+  const whatsapp  = document.getElementById('ord-whatsapp').value.trim();
+  const delivery  = document.getElementById('ord-delivery').value;
+  const occasion  = document.getElementById('ord-occasion').value;
+  const reqs      = document.getElementById('ord-requirements').value.trim();
+
+  const orderId   = generateOrderId();
+  const now       = new Date().toLocaleString('en-IN', { dateStyle: 'full', timeStyle: 'short' });
+  const occasionStr = occasion ? new Date(occasion).toLocaleDateString('en-IN', { dateStyle: 'long' }) : 'Not specified';
+
+  const subject = encodeURIComponent(`New DreamVerse Order - ${currentOrderTemplate} - ${currentOrderVersion}`);
+
+  const body = encodeURIComponent(
+`Order ID: ${orderId}
+Date & Time: ${now}
+
+--------------------------------
+Customer Information
+
+Name: ${name}
+Email: ${email}
+WhatsApp: ${whatsapp}
+
+--------------------------------
+Template Information
+
+Template: ${currentOrderTemplate}
+Version: ${currentOrderVersion}
+Price: ₹299
+
+--------------------------------
+Delivery Information
+
+Delivery Needed: ${delivery}
+Occasion Date: ${occasionStr}
+
+--------------------------------
+Requirements
+
+${reqs}
+
+--------------------------------
+Order Source: DREAMVERSE Marketplace`
+  );
+
+  // Open email
+  window.location.href = `mailto:dreamverse.web@gmail.com?subject=${subject}&body=${body}`;
+
+  // Show success
+  setTimeout(() => {
+    closeOrderForm();
+    document.getElementById('success-order-id').textContent = orderId;
+    document.getElementById('success-overlay').classList.add('active');
+  }, 400);
+}
+
+// ── Close Success ──
+function closeSuccess() {
+  document.getElementById('success-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('success-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('success-overlay')) closeSuccess();
+});
 
 // ── Nav ──
 const hamburger = document.getElementById('hamburger');
@@ -730,25 +1058,25 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ── Forms ──
+// ── Contact & Inquiry Forms ──
 function handleInquiry(e) {
   e.preventDefault();
-  const name = document.getElementById('inq-name').value;
-  const email = document.getElementById('inq-email').value;
-  const type = document.getElementById('inq-type').value;
+  const name   = document.getElementById('inq-name').value;
+  const email  = document.getElementById('inq-email').value;
+  const type   = document.getElementById('inq-type').value;
   const vision = document.getElementById('inq-vision').value;
-  const sub = encodeURIComponent('Custom Website Inquiry — ' + type);
-  const body = encodeURIComponent(`Hi DREAMVERSE,\n\nName: ${name}\nEmail: ${email}\nType: ${type}\n\nVision:\n${vision}`);
+  const sub    = encodeURIComponent('Custom Website Inquiry — ' + type);
+  const body   = encodeURIComponent(`Hi DREAMVERSE,\n\nName: ${name}\nEmail: ${email}\nType: ${type}\n\nVision:\n${vision}`);
   window.location.href = `mailto:dreamverse.web@gmail.com?subject=${sub}&body=${body}`;
   showToast('Opening your email app…');
 }
 function handleContact(e) {
   e.preventDefault();
-  const name = document.getElementById('ct-name').value;
+  const name  = document.getElementById('ct-name').value;
   const email = document.getElementById('ct-email').value;
-  const msg = document.getElementById('ct-msg').value;
-  const sub = encodeURIComponent('Message from ' + name + ' via DREAMVERSE');
-  const body = encodeURIComponent(`Hi DREAMVERSE,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
+  const msg   = document.getElementById('ct-msg').value;
+  const sub   = encodeURIComponent('Message from ' + name + ' via DREAMVERSE');
+  const body  = encodeURIComponent(`Hi DREAMVERSE,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
   window.location.href = `mailto:dreamverse.web@gmail.com?subject=${sub}&body=${body}`;
   showToast('Opening your email app…');
 }
