@@ -3,7 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DREAMVERSE — Digital Template Marketplace</title>
+
+<!-- Primary SEO -->
+<title>DREAMVERSE — Premium Digital Template Marketplace</title>
+<meta name="description" content="DREAMVERSE is a premium digital template marketplace offering beautiful website templates for birthdays, memories, romance, gaming, cinema and more. Starting from ₹299.">
+<meta name="keywords" content="digital templates, birthday website, surprise website, memory vault, crush website, gaming website, cinema website, dreamverse, premium templates, website templates india">
+<meta name="author" content="DREAMVERSE">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://dream-verse.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="DREAMVERSE — Premium Digital Template Marketplace">
+<meta property="og:description" content="Premium website templates for moments that matter. Birthdays, memories, romance, gaming & more. Starting from ₹299.">
+<meta property="og:url" content="https://dream-verse.github.io/">
+<meta property="og:site_name" content="DREAMVERSE">
+<meta property="og:image" content="https://dream-verse.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DREAMVERSE — Premium Digital Template Marketplace">
+<meta name="twitter:description" content="Premium website templates for moments that matter. Starting from ₹299.">
+<meta name="twitter:image" content="https://dream-verse.github.io/og-image.png">
+<meta name="twitter:site" content="@dreamverse_web">
+
+<!-- Theme & Mobile -->
+<meta name="theme-color" content="#1B4332">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="DREAMVERSE">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://dream-verse.github.io/#website",
+      "url": "https://dream-verse.github.io/",
+      "name": "DREAMVERSE",
+      "description": "Premium Digital Template Marketplace",
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://dream-verse.github.io/#templates",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dream-verse.github.io/#organization",
+      "name": "DREAMVERSE",
+      "url": "https://dream-verse.github.io/",
+      "email": "dreamverse.web@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/dreamverse.web/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "dreamverse.web@gmail.com",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "DREAMVERSE Templates",
+      "url": "https://dream-verse.github.io/#templates",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Birthday Surprise Template","url":"https://dream-verse.github.io/BarthWEB1/"},
+        {"@type":"ListItem","position":2,"name":"Rain & Emotion Template","url":"https://dream-verse.github.io/APLOGY-WEB1/"},
+        {"@type":"ListItem","position":3,"name":"PlayerVerse Template","url":"https://dream-verse.github.io/playerverse1/"},
+        {"@type":"ListItem","position":4,"name":"MemoryVault Template","url":"https://dream-verse.github.io/MEMORY-VAULT--1/"},
+        {"@type":"ListItem","position":5,"name":"CineVerse Template","url":"https://dream-verse.github.io/APLOGY-WEB1/"},
+        {"@type":"ListItem","position":6,"name":"CrushVerse Template","url":"https://dream-verse.github.io/CRUSH-SURPRICE-/"}
+      ]
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -292,7 +376,101 @@
     .reveal { opacity: 1; transform: none; }
   }
 
-  /* ── ORDER MODAL ── */
+  /* ── TRUST STATS ── */
+  .trust-stats-grid { display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; margin-bottom:2rem; }
+  .trust-stat { text-align:center; padding:1rem 2.5rem; }
+  .trust-num { display:block; font-family:var(--font-display); font-size:2.2rem; font-weight:500; color:var(--sage); line-height:1; margin-bottom:0.3rem; }
+  .trust-label { font-size:0.78rem; color:rgba(255,255,255,0.55); letter-spacing:0.06em; text-transform:uppercase; font-weight:400; }
+  .trust-divider { width:1px; height:50px; background:rgba(255,255,255,0.1); flex-shrink:0; }
+  .trust-badges { display:flex; gap:0.6rem; flex-wrap:wrap; justify-content:center; }
+  .trust-badge { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:30px; padding:0.45rem 1rem; font-size:0.78rem; color:rgba(255,255,255,0.7); font-weight:400; }
+  @media(max-width:600px){ .trust-divider{display:none;} .trust-stat{padding:0.75rem 1.2rem;} }
+
+  /* ── REVIEWS ── */
+  .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+  .review-card { background:#fff; border-radius:16px; padding:1.6rem; border:1px solid rgba(27,67,50,0.08); transition:var(--transition); }
+  .review-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(27,67,50,0.1); }
+  .review-stars { color:#F59E0B; font-size:0.9rem; letter-spacing:0.1em; margin-bottom:0.9rem; }
+  .review-text { font-size:0.88rem; color:var(--text-body); line-height:1.75; font-weight:300; margin-bottom:1.2rem; font-style:italic; }
+  .review-author { display:flex; align-items:center; gap:0.75rem; }
+  .review-avatar { width:36px; height:36px; border-radius:50%; background:var(--forest); color:var(--cream); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:1rem; font-weight:500; flex-shrink:0; }
+  .review-name { font-weight:500; font-size:0.88rem; color:var(--charcoal); }
+  .review-template { font-size:0.73rem; color:var(--text-muted); margin-top:0.1rem; }
+
+  /* ── ORDER TRACKING ── */
+  .track-form-box { background:#fff; border-radius:16px; padding:2rem; border:1px solid rgba(27,67,50,0.1); box-shadow:0 8px 30px rgba(27,67,50,0.06); }
+  .track-input-row { display:flex; gap:0.75rem; }
+  .track-input-row input { flex:1; padding:0.8rem 1.1rem; border:1px solid rgba(27,67,50,0.18); border-radius:50px; font-family:var(--font-body); font-size:0.9rem; color:var(--charcoal); background:var(--cream); outline:none; transition:var(--transition); }
+  .track-input-row input:focus { border-color:var(--forest); background:#fff; }
+  .track-input-row button { padding:0.8rem 1.6rem; background:var(--forest); color:var(--cream); border:none; border-radius:50px; font-family:var(--font-body); font-size:0.88rem; font-weight:500; cursor:pointer; transition:var(--transition); white-space:nowrap; }
+  .track-input-row button:hover { background:var(--forest-light); }
+  .track-result { margin-top:1.5rem; border-radius:12px; padding:1.4rem; }
+  .track-result.pending { background:#FFFBEB; border:1px solid #FDE68A; }
+  .track-result.confirmed { background:#F0FDF4; border:1px solid #BBF7D0; }
+  .track-result.delivered { background:#EEF2FF; border:1px solid #C7D2FE; }
+  .track-result.notfound { background:#FFF0F3; border:1px solid #FFD6DC; }
+  .track-status-row { display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem; }
+  .track-status-icon { font-size:1.5rem; }
+  .track-status-label { font-weight:600; font-size:0.95rem; color:var(--charcoal); }
+  .track-status-msg { font-size:0.83rem; color:var(--text-body); line-height:1.65; margin-bottom:0.75rem; }
+  .track-order-detail { font-size:0.78rem; color:var(--text-muted); }
+  .track-progress { display:flex; gap:0; margin-top:1rem; }
+  .track-step { flex:1; text-align:center; position:relative; }
+  .track-step::before { content:''; position:absolute; top:12px; left:50%; width:100%; height:2px; background:var(--beige-dark); z-index:0; }
+  .track-step:last-child::before { display:none; }
+  .track-step-dot { width:24px; height:24px; border-radius:50%; background:var(--beige-dark); border:2px solid var(--beige-dark); margin:0 auto 0.4rem; position:relative; z-index:1; display:flex; align-items:center; justify-content:center; font-size:0.65rem; color:#fff; font-weight:700; transition:var(--transition); }
+  .track-step.done .track-step-dot { background:var(--forest); border-color:var(--forest); }
+  .track-step.active .track-step-dot { background:#F59E0B; border-color:#F59E0B; box-shadow:0 0 0 4px rgba(245,158,11,0.2); }
+  .track-step-label { font-size:0.68rem; color:var(--text-muted); font-weight:400; }
+  .track-step.done .track-step-label, .track-step.active .track-step-label { color:var(--charcoal); font-weight:500; }
+
+  /* ── ADMIN PANEL ── */
+  .admin-overlay { position:fixed; inset:0; z-index:800; background:rgba(15,25,20,0.7); backdrop-filter:blur(12px); display:flex; align-items:center; justify-content:center; padding:1rem; opacity:0; pointer-events:none; transition:opacity 0.35s var(--ease); }
+  .admin-overlay.active { opacity:1; pointer-events:all; }
+  .admin-box { background:var(--cream); border-radius:20px; width:100%; max-width:680px; max-height:90vh; overflow-y:auto; box-shadow:0 40px 100px rgba(27,67,50,0.3); transform:translateY(30px); transition:transform 0.38s var(--ease); }
+  .admin-overlay.active .admin-box { transform:translateY(0); }
+  .admin-header { padding:1.5rem 1.8rem; border-bottom:1px solid rgba(27,67,50,0.08); display:flex; align-items:center; justify-content:space-between; background:var(--forest); border-radius:20px 20px 0 0; }
+  .admin-header h2 { font-family:var(--font-display); font-size:1.4rem; font-weight:400; color:var(--cream); }
+  .admin-close { width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,0.1); border:none; cursor:pointer; color:var(--cream); font-size:1rem; display:flex; align-items:center; justify-content:center; transition:var(--transition); }
+  .admin-close:hover { background:rgba(255,255,255,0.2); }
+  .admin-login { padding:2rem 1.8rem; }
+  .admin-login label { display:block; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.4rem; font-weight:500; }
+  .admin-login input { width:100%; padding:0.75rem 1rem; border:1px solid rgba(27,67,50,0.18); border-radius:10px; font-family:var(--font-body); font-size:0.9rem; color:var(--charcoal); background:#fff; outline:none; margin-bottom:1rem; transition:var(--transition); }
+  .admin-login input:focus { border-color:var(--forest); }
+  .admin-login-btn { width:100%; padding:0.85rem; background:var(--forest); color:var(--cream); border:none; border-radius:50px; font-family:var(--font-body); font-size:0.9rem; font-weight:500; cursor:pointer; transition:var(--transition); }
+  .admin-login-btn:hover { background:var(--forest-light); }
+  .admin-body { padding:1.5rem 1.8rem; display:none; }
+  .admin-body.visible { display:block; }
+  .admin-tabs { display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+  .admin-tab { padding:0.5rem 1.2rem; border-radius:30px; border:1px solid rgba(27,67,50,0.2); background:transparent; font-family:var(--font-body); font-size:0.8rem; color:var(--text-body); cursor:pointer; transition:var(--transition); }
+  .admin-tab.active { background:var(--forest); color:var(--cream); border-color:var(--forest); }
+  .order-row { background:#fff; border-radius:12px; padding:1.1rem 1.2rem; border:1px solid rgba(27,67,50,0.08); margin-bottom:0.75rem; }
+  .order-row-top { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:0.6rem; }
+  .order-row-id { font-family:var(--font-display); font-size:1.1rem; font-weight:500; color:var(--forest); }
+  .order-row-template { font-size:0.82rem; color:var(--text-body); }
+  .order-row-customer { font-size:0.8rem; color:var(--text-muted); margin-bottom:0.75rem; }
+  .status-pill { display:inline-flex; align-items:center; gap:0.35rem; padding:0.3rem 0.85rem; border-radius:20px; font-size:0.72rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+  .status-pill.pending { background:#FFFBEB; color:#92400E; border:1px solid #FDE68A; }
+  .status-pill.confirmed { background:#F0FDF4; color:#166534; border:1px solid #BBF7D0; }
+  .status-pill.delivered { background:#EEF2FF; color:#3730A3; border:1px solid #C7D2FE; }
+  .order-actions { display:flex; gap:0.5rem; flex-wrap:wrap; }
+  .btn-status { padding:0.4rem 0.9rem; border-radius:20px; font-family:var(--font-body); font-size:0.75rem; font-weight:500; cursor:pointer; transition:var(--transition); border:1px solid; }
+  .btn-confirm { background:#F0FDF4; color:#166534; border-color:#BBF7D0; }
+  .btn-confirm:hover { background:#166534; color:#fff; }
+  .btn-deliver { background:#EEF2FF; color:#3730A3; border-color:#C7D2FE; }
+  .btn-deliver:hover { background:#3730A3; color:#fff; }
+  .btn-delete-order { background:#FFF0F3; color:#7B3240; border-color:#FFD6DC; }
+  .btn-delete-order:hover { background:#7B3240; color:#fff; }
+  .admin-empty { text-align:center; padding:2rem; color:var(--text-muted); font-size:0.88rem; }
+  .admin-add-form { background:#fff; border-radius:12px; padding:1.2rem; border:1px solid rgba(27,67,50,0.1); margin-bottom:1rem; }
+  .admin-add-form h4 { font-family:var(--font-display); font-size:1rem; font-weight:500; color:var(--charcoal); margin-bottom:1rem; }
+  .admin-add-row { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem; }
+  .admin-add-form input, .admin-add-form select, .admin-add-form textarea { width:100%; padding:0.65rem 0.9rem; border:1px solid rgba(27,67,50,0.15); border-radius:8px; font-family:var(--font-body); font-size:0.83rem; color:var(--charcoal); background:var(--cream); outline:none; -webkit-appearance:none; }
+  .admin-add-form textarea { min-height:70px; resize:vertical; margin-bottom:0.75rem; }
+  .btn-add-order { padding:0.6rem 1.5rem; background:var(--forest); color:var(--cream); border:none; border-radius:30px; font-family:var(--font-body); font-size:0.82rem; font-weight:500; cursor:pointer; transition:var(--transition); }
+  .btn-add-order:hover { background:var(--forest-light); }
+  .admin-trigger { position:fixed; bottom:1.5rem; right:1.5rem; z-index:500; width:48px; height:48px; border-radius:50%; background:var(--forest); color:var(--cream); border:none; cursor:pointer; font-size:1.3rem; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(27,67,50,0.3); transition:var(--transition); }
+  .admin-trigger:hover { background:var(--forest-light); transform:scale(1.1); }
   .order-overlay {
     position: fixed; inset: 0; z-index: 600;
     background: rgba(15,25,20,0.6); backdrop-filter: blur(10px);
@@ -407,7 +585,8 @@
   <a href="#" class="nav-logo">DREAMVERSE</a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#templates">Templates</a></li>
-    <li><a href="#categories">Categories</a></li>
+    <li><a href="#trust">Reviews</a></li>
+    <li><a href="#track">Track Order</a></li>
     <li><a href="#custom">Custom</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -450,19 +629,94 @@
   <div class="templates-grid" id="templates-grid"></div>
 </section>
 
-<!-- CATEGORIES -->
-<section id="categories">
-  <div class="section-header">
-    <p class="section-eyebrow reveal">Browse by Mood</p>
-    <h2 class="section-title reveal reveal-delay-1">Find your <em>perfect</em> template</h2>
+<!-- TRUST STATS -->
+<section id="trust" style="background:var(--forest);padding:4rem 5%;">
+  <div class="trust-stats-grid reveal">
+    <div class="trust-stat">
+      <span class="trust-num">50+</span>
+      <span class="trust-label">Happy Customers</span>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <span class="trust-num">4.9 ★</span>
+      <span class="trust-label">Average Rating</span>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <span class="trust-num">24hr</span>
+      <span class="trust-label">Fast Delivery</span>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <span class="trust-num">100%</span>
+      <span class="trust-label">Satisfaction Guaranteed</span>
+    </div>
   </div>
-  <div class="categories-grid">
-    <div class="category-card reveal"><span class="cat-icon">🎉</span><span class="cat-label">Celebrations</span><span class="cat-count">2 templates</span></div>
-    <div class="category-card reveal reveal-delay-1"><span class="cat-icon">💌</span><span class="cat-label">Romance</span><span class="cat-count">2 templates</span></div>
-    <div class="category-card reveal reveal-delay-2"><span class="cat-icon">📷</span><span class="cat-label">Memories</span><span class="cat-count">1 template</span></div>
-    <div class="category-card reveal reveal-delay-3"><span class="cat-icon">🎮</span><span class="cat-label">Gaming</span><span class="cat-count">1 template</span></div>
-    <div class="category-card reveal"><span class="cat-icon">🎬</span><span class="cat-label">Cinema</span><span class="cat-count">1 template</span></div>
-    <div class="category-card reveal reveal-delay-1"><span class="cat-icon">✨</span><span class="cat-label">Custom</span><span class="cat-count">Anything you dream</span></div>
+  <div class="trust-badges reveal reveal-delay-1">
+    <div class="trust-badge">✅ Secure Ordering</div>
+    <div class="trust-badge">💬 WhatsApp Support</div>
+    <div class="trust-badge">🔄 Free Revisions</div>
+    <div class="trust-badge">📱 Mobile Optimized</div>
+    <div class="trust-badge">⚡ Quick Delivery</div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" style="background:var(--beige);">
+  <div class="section-header" style="text-align:center;">
+    <p class="section-eyebrow reveal" style="justify-content:center;">What Customers Say</p>
+    <h2 class="section-title reveal reveal-delay-1" style="max-width:100%;">Real stories, <em>real smiles</em></h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Got the Birthday Surprise template for my girlfriend. She literally cried when she saw it. Worth every rupee — so personal and beautiful!"</p>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div>
+          <p class="review-name">Aarav M.</p>
+          <p class="review-template">Birthday Surprise · V1</p>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"CrushVerse was exactly what I needed to confess my feelings. The design is so elegant and the delivery was super fast. Highly recommend!"</p>
+      <div class="review-author">
+        <div class="review-avatar">R</div>
+        <div>
+          <p class="review-name">Riya S.</p>
+          <p class="review-template">CrushVerse · V1</p>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"MemoryVault for my parents' anniversary was a huge hit! Everyone at the party loved it. The team was very responsive on WhatsApp too."</p>
+      <div class="review-author">
+        <div class="review-avatar">K</div>
+        <div>
+          <p class="review-name">Karan P.</p>
+          <p class="review-template">MemoryVault · V1</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER TRACKING -->
+<section id="track" style="background:var(--cream);">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <p class="section-eyebrow reveal" style="justify-content:center;">Order Status</p>
+    <h2 class="section-title reveal reveal-delay-1" style="max-width:100%;">Track your <em>order</em></h2>
+    <p class="section-desc reveal reveal-delay-2" style="margin:0 auto 2.5rem;text-align:center;">Enter your Order ID to check the current status of your order.</p>
+    <div class="track-form-box reveal reveal-delay-2">
+      <div class="track-input-row">
+        <input type="text" id="track-input" placeholder="Enter Order ID (e.g. DV-1234)" maxlength="10">
+        <button onclick="trackOrder()">Track</button>
+      </div>
+      <div id="track-result" class="track-result" style="display:none;"></div>
+    </div>
   </div>
 </section>
 
@@ -740,8 +994,96 @@
   </div>
 </div>
 
+<!-- ADMIN PANEL -->
+<div class="admin-overlay" id="admin-overlay">
+  <div class="admin-box">
+    <div class="admin-header">
+      <h2>⚙ DREAMVERSE Admin</h2>
+      <button class="admin-close" onclick="closeAdmin()">✕</button>
+    </div>
+    <!-- Login -->
+    <div class="admin-login" id="admin-login">
+      <label for="admin-pass">Admin Password</label>
+      <input type="password" id="admin-pass" placeholder="Enter password" onkeydown="if(event.key==='Enter')adminLogin()">
+      <button class="admin-login-btn" onclick="adminLogin()">Login</button>
+      <p id="admin-login-err" style="color:#E53E3E;font-size:0.8rem;margin-top:0.5rem;display:none;">Incorrect password. Try again.</p>
+    </div>
+    <!-- Body -->
+    <div class="admin-body" id="admin-body">
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="adminTab('pending',this)">🕐 Pending</button>
+        <button class="admin-tab" onclick="adminTab('confirmed',this)">✅ Confirmed</button>
+        <button class="admin-tab" onclick="adminTab('delivered',this)">📦 Delivered</button>
+        <button class="admin-tab" onclick="adminTab('add',this)">➕ Add Order</button>
+      </div>
+      <!-- Order lists -->
+      <div id="admin-tab-pending"><div id="orders-pending"></div></div>
+      <div id="admin-tab-confirmed" style="display:none"><div id="orders-confirmed"></div></div>
+      <div id="admin-tab-delivered" style="display:none"><div id="orders-delivered"></div></div>
+      <!-- Add order manually -->
+      <div id="admin-tab-add" style="display:none">
+        <div class="admin-add-form">
+          <h4>Add / Update Order</h4>
+          <div class="admin-add-row">
+            <div><label style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Order ID</label><input type="text" id="add-orderid" placeholder="DV-1234"></div>
+            <div><label style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Customer Name</label><input type="text" id="add-name" placeholder="Customer name"></div>
+          </div>
+          <div class="admin-add-row">
+            <div><label style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Template</label><input type="text" id="add-template" placeholder="Birthday Surprise"></div>
+            <div><label style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Version</label><input type="text" id="add-version" placeholder="V1"></div>
+          </div>
+          <div class="admin-add-row">
+            <div><label style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">WhatsApp</label><input type="text" id="add-wp" placeholder="+91 98765 43210"></div>
+            <div><label style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Status</label>
+              <select id="add-status"><option value="pending">Pending</option><option value="confirmed">Confirmed</option><option value="delivered">Delivered</option></select>
+            </div>
+          </div>
+          <textarea id="add-note" placeholder="Internal note (optional)…"></textarea>
+          <button class="btn-add-order" onclick="adminAddOrder()">Save Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Admin trigger button (hidden, activated by footer secret click) -->
+<button class="admin-trigger" id="admin-trigger" title="Admin Panel" style="display:none" onclick="openAdmin()">⚙</button>
+
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
+
+
+<!-- Firebase SDK -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, set, get, update, remove, onValue, push } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+// ── Firebase Config ──
+const firebaseConfig = {
+  apiKey: "AIzaSyAhbuD4jKg1rVhB8pEo7V9sklTETu90DDY",
+  authDomain: "dreamverse-web-55005.firebaseapp.com",
+  databaseURL: "https://dreamverse-web-55005-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "dreamverse-web-55005",
+  storageBucket: "dreamverse-web-55005.firebasestorage.app",
+  messagingSenderId: "645605828930",
+  appId: "1:645605828930:web:0679db786e2a678022c0db"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getDatabase(app);
+
+// ── Make Firebase functions globally available ──
+window._db     = db;
+window._ref    = ref;
+window._set    = set;
+window._get    = get;
+window._update = update;
+window._remove = remove;
+window._push   = push;
+window._fbReady = true;
+
+console.log("✅ Firebase connected");
+</script>
 
 <script>
 // ═══════════════════════════════════════════
@@ -834,11 +1176,21 @@ const TEMPLATES = [
   }
 ];
 
-// ── Order ID generator ──
+// ── Helpers ──
 function generateOrderId() {
-  const base = 1001;
-  const rand = Math.floor(Math.random() * 9000);
-  return 'DV-' + (base + rand);
+  return 'DV-' + (1000 + Math.floor(Math.random() * 9000));
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function waitForFirebase(cb, retries = 20) {
+  if (window._fbReady) { cb(); }
+  else if (retries > 0) { setTimeout(() => waitForFirebase(cb, retries - 1), 150); }
+  else { console.error('Firebase not ready'); showToast('Connection error. Try again.'); }
 }
 
 // ── Render Template Cards ──
@@ -880,11 +1232,9 @@ function openModal(id) {
   currentModalId = id;
   const t = TEMPLATES.find(x => x.id === id);
   if (!t) return;
-
   document.getElementById('modal-emoji').textContent = t.emoji;
   document.getElementById('modal-title').textContent = t.name + ' Collection';
   document.getElementById('modal-subtitle').textContent = 'Choose a version to preview or order';
-
   const list = document.getElementById('versions-list');
   list.innerHTML = t.versions.map(v => {
     if (v.status === 'live') {
@@ -913,7 +1263,6 @@ function openModal(id) {
         </div>`;
     }
   }).join('');
-
   document.getElementById('modal-overlay').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -922,37 +1271,28 @@ function closeModal() {
   document.getElementById('modal-overlay').classList.remove('active');
   document.body.style.overflow = '';
 }
-
 document.getElementById('modal-close').addEventListener('click', closeModal);
 document.getElementById('modal-overlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modal-overlay')) closeModal();
 });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeOrderForm(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeOrderForm(); closeAdmin(); } });
 
 // ── Order Form Modal ──
 let currentOrderTemplate = '';
-let currentOrderVersion = '';
+let currentOrderVersion  = '';
 
 function openOrderForm(e, templateId, versionLabel) {
   if (e) e.preventDefault();
   const t = TEMPLATES.find(x => x.id === templateId);
   if (!t) return;
-
   currentOrderTemplate = t.name;
-  currentOrderVersion = versionLabel || (t.versions.find(v => v.status === 'live')?.label || t.name + '-V1');
-
-  // Fill auto fields
+  currentOrderVersion  = versionLabel || (t.versions.find(v => v.status === 'live')?.label || t.name + '-V1');
   document.getElementById('af-template').textContent = t.name;
-  document.getElementById('af-version').textContent = currentOrderVersion;
-  document.getElementById('af-price').textContent = '₹299';
+  document.getElementById('af-version').textContent  = currentOrderVersion;
+  document.getElementById('af-price').textContent    = '₹299';
   document.getElementById('order-title').textContent = 'Order ' + t.name;
-
-  // Reset form
   document.getElementById('order-form').reset();
-
-  // Close version modal if open
   document.getElementById('modal-overlay').classList.remove('active');
-
   document.getElementById('order-overlay').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -961,66 +1301,51 @@ function closeOrderForm() {
   document.getElementById('order-overlay').classList.remove('active');
   document.body.style.overflow = '';
 }
-
 document.getElementById('order-close').addEventListener('click', closeOrderForm);
 document.getElementById('order-overlay').addEventListener('click', e => {
   if (e.target === document.getElementById('order-overlay')) closeOrderForm();
 });
 
-// ── Submit Order ──
+// ── Submit Order → Firebase ──
 function submitOrder(e) {
   e.preventDefault();
-
   const name      = document.getElementById('ord-name').value.trim();
   const email     = document.getElementById('ord-email').value.trim();
   const whatsapp  = document.getElementById('ord-whatsapp').value.trim();
   const delivery  = document.getElementById('ord-delivery').value;
   const occasion  = document.getElementById('ord-occasion').value;
   const reqs      = document.getElementById('ord-requirements').value.trim();
-
   const orderId   = generateOrderId();
-  const now       = new Date().toLocaleString('en-IN', { dateStyle: 'full', timeStyle: 'short' });
-  const occasionStr = occasion ? new Date(occasion).toLocaleDateString('en-IN', { dateStyle: 'long' }) : 'Not specified';
+  const now       = new Date().toLocaleString('en-IN', { dateStyle:'full', timeStyle:'short' });
+  const occasionStr = occasion ? new Date(occasion).toLocaleDateString('en-IN',{dateStyle:'long'}) : 'Not specified';
 
+  const orderData = {
+    id: orderId, name, email, whatsapp,
+    template: currentOrderTemplate,
+    version:  currentOrderVersion,
+    status:   'pending',
+    delivery, occasion: occasionStr,
+    requirements: reqs,
+    time: now
+  };
+
+  // Save to Firebase
+  waitForFirebase(() => {
+    const orderRef = window._ref(window._db, 'orders/' + orderId);
+    window._set(orderRef, orderData)
+      .then(() => {
+        console.log('Order saved to Firebase:', orderId);
+      })
+      .catch(err => console.error('Firebase save error:', err));
+  });
+
+  // Send email
   const subject = encodeURIComponent(`New DreamVerse Order - ${currentOrderTemplate} - ${currentOrderVersion}`);
-
   const body = encodeURIComponent(
-`Order ID: ${orderId}
-Date & Time: ${now}
+`Order ID: ${orderId}\nDate & Time: ${now}\n\n--------------------------------\nCustomer Information\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${whatsapp}\n\n--------------------------------\nTemplate Information\n\nTemplate: ${currentOrderTemplate}\nVersion: ${currentOrderVersion}\nPrice: ₹299\n\n--------------------------------\nDelivery Information\n\nDelivery Needed: ${delivery}\nOccasion Date: ${occasionStr}\n\n--------------------------------\nRequirements\n\n${reqs}\n\n--------------------------------\nOrder Source: DREAMVERSE Marketplace`);
 
---------------------------------
-Customer Information
-
-Name: ${name}
-Email: ${email}
-WhatsApp: ${whatsapp}
-
---------------------------------
-Template Information
-
-Template: ${currentOrderTemplate}
-Version: ${currentOrderVersion}
-Price: ₹299
-
---------------------------------
-Delivery Information
-
-Delivery Needed: ${delivery}
-Occasion Date: ${occasionStr}
-
---------------------------------
-Requirements
-
-${reqs}
-
---------------------------------
-Order Source: DREAMVERSE Marketplace`
-  );
-
-  // Open email
   window.location.href = `mailto:dreamverse.web@gmail.com?subject=${subject}&body=${body}`;
 
-  // Show success
   setTimeout(() => {
     closeOrderForm();
     document.getElementById('success-order-id').textContent = orderId;
@@ -1028,7 +1353,6 @@ Order Source: DREAMVERSE Marketplace`
   }, 400);
 }
 
-// ── Close Success ──
 function closeSuccess() {
   document.getElementById('success-overlay').classList.remove('active');
   document.body.style.overflow = '';
@@ -1037,25 +1361,192 @@ document.getElementById('success-overlay').addEventListener('click', e => {
   if (e.target === document.getElementById('success-overlay')) closeSuccess();
 });
 
-// ── Nav ──
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-window.addEventListener('scroll', () => {
-  document.getElementById('main-nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(27,67,50,0.08)' : 'none';
-}, { passive: true });
+// ── Order Tracking → Firebase ──
+function trackOrder() {
+  const input  = document.getElementById('track-input').value.trim().toUpperCase();
+  const result = document.getElementById('track-result');
+  if (!input) { showToast('Please enter your Order ID'); return; }
 
-// ── Reveal ──
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  result.style.display = 'block';
+  result.className = 'track-result';
+  result.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:1rem;">🔍 Searching…</p>';
 
-// ── Toast ──
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
+  waitForFirebase(() => {
+    const orderRef = window._ref(window._db, 'orders/' + input);
+    window._get(orderRef).then(snapshot => {
+      if (!snapshot.exists()) {
+        result.className = 'track-result notfound';
+        result.innerHTML = `
+          <div class="track-status-row"><span class="track-status-icon">❓</span><span class="track-status-label">Order Not Found</span></div>
+          <p class="track-status-msg">No order found with ID <strong>${input}</strong>. Please check and try again, or contact us.</p>
+          <p class="track-order-detail"><a href="https://www.instagram.com/dreamverse.web/" target="_blank" style="color:var(--forest)">Contact DREAMVERSE →</a></p>`;
+        return;
+      }
+
+      const order = snapshot.val();
+      const steps = [
+        { key: 'pending',   label: 'Received' },
+        { key: 'confirmed', label: 'Confirmed' },
+        { key: 'delivered', label: 'Delivered' }
+      ];
+      const statusIdx = steps.findIndex(s => s.key === order.status);
+      const statusConfig = {
+        pending:   { cls:'pending',   icon:'🕐', label:'Order Pending',   msg:`Your order has been received! We're reviewing it and will confirm shortly via WhatsApp or Email.` },
+        confirmed: { cls:'confirmed', icon:'✅', label:'Order Confirmed',  msg:`Great news! Your order is confirmed and we're working on your website. We'll deliver it soon!` },
+        delivered: { cls:'delivered', icon:'📦', label:'Order Delivered',  msg:`Your website has been delivered! Check your WhatsApp or Email for the link. Enjoy! 🎉` }
+      };
+      const sc = statusConfig[order.status] || statusConfig.pending;
+
+      const stepsHTML = steps.map((s, i) => {
+        const cls = i < statusIdx ? 'done' : i === statusIdx ? 'active' : '';
+        return `<div class="track-step ${cls}"><div class="track-step-dot">${i < statusIdx ? '✓' : i+1}</div><p class="track-step-label">${s.label}</p></div>`;
+      }).join('');
+
+      result.className = `track-result ${sc.cls}`;
+      result.innerHTML = `
+        <div class="track-status-row"><span class="track-status-icon">${sc.icon}</span><span class="track-status-label">${sc.label}</span></div>
+        <p class="track-status-msg">${sc.msg}</p>
+        <p class="track-order-detail">Template: <strong>${order.template||'—'}</strong> &nbsp;·&nbsp; Version: <strong>${order.version||'—'}</strong>${order.note?`<br>Note: ${order.note}`:''}</p>
+        <div class="track-progress">${stepsHTML}</div>`;
+    }).catch(() => {
+      result.className = 'track-result notfound';
+      result.innerHTML = `<p style="color:#E53E3E;font-size:0.88rem;">Connection error. Please try again.</p>`;
+    });
+  });
+}
+
+// ── Admin Panel → Firebase ──
+const ADMIN_PASS = 'dreamverse2025';
+let adminLoggedIn = false;
+let currentAdminTab = 'pending';
+
+function openAdmin() {
+  document.getElementById('admin-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  if (adminLoggedIn) showAdminBody();
+}
+function closeAdmin() {
+  document.getElementById('admin-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('admin-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('admin-overlay')) closeAdmin();
+});
+
+function adminLogin() {
+  const pass = document.getElementById('admin-pass').value;
+  if (pass === ADMIN_PASS) {
+    adminLoggedIn = true;
+    showAdminBody();
+  } else {
+    document.getElementById('admin-login-err').style.display = 'block';
+  }
+}
+
+function showAdminBody() {
+  document.getElementById('admin-login').style.display = 'none';
+  document.getElementById('admin-body').classList.add('visible');
+  renderAdminOrders('pending');
+}
+
+function adminTab(tab, btn) {
+  currentAdminTab = tab;
+  ['pending','confirmed','delivered','add'].forEach(t => {
+    document.getElementById('admin-tab-' + t).style.display = t === tab ? 'block' : 'none';
+  });
+  document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (tab !== 'add') renderAdminOrders(tab);
+}
+
+function renderAdminOrders(status) {
+  const el = document.getElementById('orders-' + status);
+  el.innerHTML = `<div class="admin-empty">⏳ Loading orders…</div>`;
+
+  waitForFirebase(() => {
+    const ordersRef = window._ref(window._db, 'orders');
+    window._get(ordersRef).then(snapshot => {
+      if (!snapshot.exists()) {
+        el.innerHTML = `<div class="admin-empty">No ${status} orders yet.</div>`;
+        return;
+      }
+      const all = Object.values(snapshot.val());
+      const filtered = all.filter(o => o.status === status);
+      if (!filtered.length) {
+        el.innerHTML = `<div class="admin-empty">No ${status} orders yet.</div>`;
+        return;
+      }
+      // Sort by time descending (newest first)
+      filtered.sort((a,b) => new Date(b.time) - new Date(a.time));
+      el.innerHTML = filtered.map(o => `
+        <div class="order-row" id="row-${o.id}">
+          <div class="order-row-top">
+            <span class="order-row-id">${o.id}</span>
+            <span class="status-pill ${o.status}">${o.status.toUpperCase()}</span>
+          </div>
+          <p class="order-row-template">📦 ${o.template||'—'} · ${o.version||'—'}</p>
+          <p class="order-row-customer">👤 ${o.name||'—'} &nbsp;|&nbsp; 📱 ${o.whatsapp||'—'}</p>
+          <p class="order-row-customer">📅 ${o.time||'—'} &nbsp;|&nbsp; 🚚 ${o.delivery||'—'}</p>
+          ${o.requirements ? `<p style="font-size:0.78rem;color:var(--text-muted);margin:0.3rem 0 0.75rem;line-height:1.5;">📝 ${o.requirements.substring(0,120)}${o.requirements.length>120?'…':''}</p>` : ''}
+          <div class="order-actions">
+            ${o.status==='pending'   ? `<button class="btn-status btn-confirm"  onclick="updateOrderStatus('${o.id}','confirmed')">✅ Confirm</button>` : ''}
+            ${o.status==='confirmed' ? `<button class="btn-status btn-deliver"  onclick="updateOrderStatus('${o.id}','delivered')">📦 Mark Delivered</button>` : ''}
+            <button class="btn-status btn-delete-order" onclick="deleteOrder('${o.id}')">🗑 Delete</button>
+          </div>
+        </div>`).join('');
+    }).catch(() => {
+      el.innerHTML = `<div class="admin-empty" style="color:#E53E3E;">Connection error. Check internet.</div>`;
+    });
+  });
+}
+
+function updateOrderStatus(id, newStatus) {
+  waitForFirebase(() => {
+    const orderRef = window._ref(window._db, 'orders/' + id);
+    window._update(orderRef, { status: newStatus })
+      .then(() => {
+        showToast(`✅ Order ${id} → ${newStatus}`);
+        renderAdminOrders(currentAdminTab);
+      })
+      .catch(() => showToast('Update failed. Try again.'));
+  });
+}
+
+function deleteOrder(id) {
+  if (!confirm(`Delete order ${id}? This cannot be undone.`)) return;
+  waitForFirebase(() => {
+    const orderRef = window._ref(window._db, 'orders/' + id);
+    window._remove(orderRef)
+      .then(() => {
+        showToast('Order deleted');
+        renderAdminOrders(currentAdminTab);
+      })
+      .catch(() => showToast('Delete failed. Try again.'));
+  });
+}
+
+function adminAddOrder() {
+  const id       = document.getElementById('add-orderid').value.trim().toUpperCase();
+  const name     = document.getElementById('add-name').value.trim();
+  const template = document.getElementById('add-template').value.trim();
+  const version  = document.getElementById('add-version').value.trim();
+  const whatsapp = document.getElementById('add-wp').value.trim();
+  const status   = document.getElementById('add-status').value;
+  const note     = document.getElementById('add-note').value.trim();
+  if (!id || !name) { showToast('Order ID and Name are required'); return; }
+
+  const entry = { id, name, template, version, whatsapp, status, note, time: new Date().toLocaleString('en-IN') };
+
+  waitForFirebase(() => {
+    const orderRef = window._ref(window._db, 'orders/' + id);
+    window._set(orderRef, entry)
+      .then(() => {
+        ['add-orderid','add-name','add-template','add-version','add-wp','add-note'].forEach(f => document.getElementById(f).value='');
+        showToast(`✅ Order ${id} saved!`);
+        renderAdminOrders('pending');
+      })
+      .catch(() => showToast('Save failed. Try again.'));
+  });
 }
 
 // ── Contact & Inquiry Forms ──
@@ -1070,6 +1561,7 @@ function handleInquiry(e) {
   window.location.href = `mailto:dreamverse.web@gmail.com?subject=${sub}&body=${body}`;
   showToast('Opening your email app…');
 }
+
 function handleContact(e) {
   e.preventDefault();
   const name  = document.getElementById('ct-name').value;
@@ -1080,6 +1572,31 @@ function handleContact(e) {
   window.location.href = `mailto:dreamverse.web@gmail.com?subject=${sub}&body=${body}`;
   showToast('Opening your email app…');
 }
+
+// ── Nav ──
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(27,67,50,0.08)' : 'none';
+}, { passive: true });
+
+// ── Reveal on scroll ──
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+// ── Secret admin trigger: click footer © 5 times ──
+let secretClicks = 0;
+document.querySelector('.footer-bottom').addEventListener('click', () => {
+  secretClicks++;
+  if (secretClicks >= 5) {
+    secretClicks = 0;
+    document.getElementById('admin-trigger').style.display = 'flex';
+    openAdmin();
+  }
+});
 
 // ── Init ──
 renderCards();
