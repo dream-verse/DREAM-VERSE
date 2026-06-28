@@ -1,0 +1,22 @@
+# robots.txt — DREAMVERSE Digital Marketplace
+# https://dream-verse.github.io/
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Block any admin or private paths (none currently, future-proofing)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://dream-verse.github.io/sitemap.xml
