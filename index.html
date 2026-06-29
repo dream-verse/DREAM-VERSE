@@ -12,6 +12,13 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://dream-verse.github.io/">
 
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="DREAMVERSE — Premium Digital Template Marketplace">
@@ -453,12 +460,15 @@
   .status-pill.pending { background:#FFFBEB; color:#92400E; border:1px solid #FDE68A; }
   .status-pill.confirmed { background:#F0FDF4; color:#166534; border:1px solid #BBF7D0; }
   .status-pill.delivered { background:#EEF2FF; color:#3730A3; border:1px solid #C7D2FE; }
+  .status-pill.cancelled { background:#FFF0F3; color:#7B3240; border:1px solid #FFD6DC; }
   .order-actions { display:flex; gap:0.5rem; flex-wrap:wrap; }
   .btn-status { padding:0.4rem 0.9rem; border-radius:20px; font-family:var(--font-body); font-size:0.75rem; font-weight:500; cursor:pointer; transition:var(--transition); border:1px solid; }
   .btn-confirm { background:#F0FDF4; color:#166534; border-color:#BBF7D0; }
   .btn-confirm:hover { background:#166534; color:#fff; }
   .btn-deliver { background:#EEF2FF; color:#3730A3; border-color:#C7D2FE; }
   .btn-deliver:hover { background:#3730A3; color:#fff; }
+  .btn-cancel-order { background:#FFF8F0; color:#C05621; border-color:#FBD38D; }
+  .btn-cancel-order:hover { background:#C05621; color:#fff; }
   .btn-delete-order { background:#FFF0F3; color:#7B3240; border-color:#FFD6DC; }
   .btn-delete-order:hover { background:#7B3240; color:#fff; }
   .admin-empty { text-align:center; padding:2rem; color:var(--text-muted); font-size:0.88rem; }
@@ -1014,12 +1024,14 @@
         <button class="admin-tab active" onclick="adminTab('pending',this)">🕐 Pending</button>
         <button class="admin-tab" onclick="adminTab('confirmed',this)">✅ Confirmed</button>
         <button class="admin-tab" onclick="adminTab('delivered',this)">📦 Delivered</button>
+        <button class="admin-tab" onclick="adminTab('cancelled',this)">❌ Cancelled</button>
         <button class="admin-tab" onclick="adminTab('add',this)">➕ Add Order</button>
       </div>
       <!-- Order lists -->
       <div id="admin-tab-pending"><div id="orders-pending"></div></div>
       <div id="admin-tab-confirmed" style="display:none"><div id="orders-confirmed"></div></div>
       <div id="admin-tab-delivered" style="display:none"><div id="orders-delivered"></div></div>
+      <div id="admin-tab-cancelled" style="display:none"><div id="orders-cancelled"></div></div>
       <!-- Add order manually -->
       <div id="admin-tab-add" style="display:none">
         <div class="admin-add-form">
@@ -1035,7 +1047,12 @@
           <div class="admin-add-row">
             <div><label style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">WhatsApp</label><input type="text" id="add-wp" placeholder="+91 98765 43210"></div>
             <div><label style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Status</label>
-              <select id="add-status"><option value="pending">Pending</option><option value="confirmed">Confirmed</option><option value="delivered">Delivered</option></select>
+              <select id="add-status">
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="delivered">Delivered</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
             </div>
           </div>
           <textarea id="add-note" placeholder="Internal note (optional)…"></textarea>
@@ -1060,7 +1077,7 @@ import { getDatabase, ref, set, get, update, remove, onValue, push } from "https
 
 // ── Firebase Config ──
 const firebaseConfig = {
-  apiKey: "AIzaSyAhbuD4jKg1rVhB8pEo7V9sklTETu90DDY",
+  apiKey: "AIzaSyDgte3BadtuMmGc9WcIPx6BvHku71UEsFg",
   authDomain: "dreamverse-web-55005.firebaseapp.com",
   databaseURL: "https://dreamverse-web-55005-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "dreamverse-web-55005",
@@ -1101,7 +1118,7 @@ const TEMPLATES = [
       { label: "Birthday-Surprise-V1", status: "live", url: "https://dream-verse.github.io/BarthWEB1/" },
       { label: "Birthday-Surprise-V2", status: "live", url: "https://dream-verse.github.io/BARTHDAY-V2/" },
       { label: "Birthday-Surprise-V3", status: "live", url: "https://dream-verse.github.io/Birthday-V3/" },
-      { label: "Birthday-Surprise-V4", status: "live", url: "https://dream-verse.github.io/Birthday-V4/" },
+      { label: "Birthday-Surprise-V4", status: "live", url: "https://dream-verse.github.io/Birthday-V4/" }
     ]
   },
   {
@@ -1393,7 +1410,8 @@ function trackOrder() {
       const statusConfig = {
         pending:   { cls:'pending',   icon:'🕐', label:'Order Pending',   msg:`Your order has been received! We're reviewing it and will confirm shortly via WhatsApp or Email.` },
         confirmed: { cls:'confirmed', icon:'✅', label:'Order Confirmed',  msg:`Great news! Your order is confirmed and we're working on your website. We'll deliver it soon!` },
-        delivered: { cls:'delivered', icon:'📦', label:'Order Delivered',  msg:`Your website has been delivered! Check your WhatsApp or Email for the link. Enjoy! 🎉` }
+        delivered: { cls:'delivered', icon:'📦', label:'Order Delivered',  msg:`Your website has been delivered! Check your WhatsApp or Email for the link. Enjoy! 🎉` },
+        cancelled: { cls:'notfound',  icon:'❌', label:'Order Cancelled',  msg:`This order has been cancelled. Please contact us on WhatsApp or Email if you have any questions.` }
       };
       const sc = statusConfig[order.status] || statusConfig.pending;
 
@@ -1451,7 +1469,7 @@ function showAdminBody() {
 
 function adminTab(tab, btn) {
   currentAdminTab = tab;
-  ['pending','confirmed','delivered','add'].forEach(t => {
+  ['pending','confirmed','delivered','cancelled','add'].forEach(t => {
     document.getElementById('admin-tab-' + t).style.display = t === tab ? 'block' : 'none';
   });
   document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
@@ -1476,7 +1494,6 @@ function renderAdminOrders(status) {
         el.innerHTML = `<div class="admin-empty">No ${status} orders yet.</div>`;
         return;
       }
-      // Sort by time descending (newest first)
       filtered.sort((a,b) => new Date(b.time) - new Date(a.time));
       el.innerHTML = filtered.map(o => `
         <div class="order-row" id="row-${o.id}">
@@ -1491,6 +1508,7 @@ function renderAdminOrders(status) {
           <div class="order-actions">
             ${o.status==='pending'   ? `<button class="btn-status btn-confirm"  onclick="updateOrderStatus('${o.id}','confirmed')">✅ Confirm</button>` : ''}
             ${o.status==='confirmed' ? `<button class="btn-status btn-deliver"  onclick="updateOrderStatus('${o.id}','delivered')">📦 Mark Delivered</button>` : ''}
+            ${(o.status==='pending'||o.status==='confirmed') ? `<button class="btn-status btn-cancel-order" onclick="cancelOrder('${o.id}')">❌ Cancel</button>` : ''}
             <button class="btn-status btn-delete-order" onclick="deleteOrder('${o.id}')">🗑 Delete</button>
           </div>
         </div>`).join('');
@@ -1509,6 +1527,19 @@ function updateOrderStatus(id, newStatus) {
         renderAdminOrders(currentAdminTab);
       })
       .catch(() => showToast('Update failed. Try again.'));
+  });
+}
+
+function cancelOrder(id) {
+  if (!confirm(`Cancel order ${id}? Customer will see status as Cancelled.`)) return;
+  waitForFirebase(() => {
+    const orderRef = window._ref(window._db, 'orders/' + id);
+    window._update(orderRef, { status: 'cancelled' })
+      .then(() => {
+        showToast(`❌ Order ${id} cancelled`);
+        renderAdminOrders(currentAdminTab);
+      })
+      .catch(() => showToast('Cancel failed. Try again.'));
   });
 }
 
