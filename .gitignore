@@ -1,0 +1,41 @@
+# ==========================
+# DREAMVERSE .gitignore
+# ==========================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment variables
+.env
+.env.*
+
+# Node.js (for future use)
+node_modules/
+
+# Build folders (future)
+dist/
+build/
+
+# Cache
+.cache/
+
+# Firebase
+.firebase/
+
+# npm
+npm-debug.log*
