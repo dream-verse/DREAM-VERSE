@@ -280,7 +280,7 @@
   .inquiry-form h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; color: var(--cream); margin-bottom: 1.5rem; }
   .form-group { margin-bottom: 1.1rem; }
   .form-group label { display: block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.45rem; font-weight: 400; }
-  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; color: var(--cream); font-family: var(--font-body); font-size: 0.88rem; font-weight: 300; transition: var(--transition); outline: none; -webkit-appearance: none; }
+  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; color: var(--cream); font-family: var(--font-body); font-size: 0.88rem; font-weight: 300; transition: var(--transition); outline: none; -webkit-appearance: none; appearance: none; }
   .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
   .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: rgba(149,213,178,0.5); background: rgba(255,255,255,0.1); }
   .form-group select option { background: var(--forest); color: var(--cream); }
@@ -431,6 +431,76 @@
   .track-step-label { font-size:0.68rem; color:var(--text-muted); font-weight:400; }
   .track-step.done .track-step-label, .track-step.active .track-step-label { color:var(--charcoal); font-weight:500; }
 
+  /* ── URGENCY BADGES ── */
+  .template-badge {
+    position:absolute; top:12px; left:12px; z-index:2;
+    font-size:0.62rem; font-weight:600; letter-spacing:0.06em;
+    padding:0.28rem 0.7rem; border-radius:20px;
+    backdrop-filter:blur(8px);
+  }
+  .badge-popular { background:rgba(220,38,38,0.9); color:#fff; }
+  .badge-new { background:rgba(27,67,50,0.9); color:#B7E4C7; }
+  .badge-trending { background:rgba(217,119,6,0.9); color:#FEF3C7; }
+
+  /* ── STRIKETHROUGH PRICE ── */
+  .price-original { font-size:0.78rem; color:var(--text-muted); text-decoration:line-through; font-family:var(--font-body); font-weight:400; margin-left:0.3rem; }
+
+  /* ── BUNDLE SECTION ── */
+  #bundle-section { background:var(--forest); padding:3.5rem 5%; }
+  .bundle-inner {
+    max-width:700px; margin:0 auto; text-align:center;
+    background:rgba(255,255,255,0.06); border:1px solid rgba(149,213,178,0.25);
+    border-radius:20px; padding:2.5rem 2rem; position:relative; overflow:hidden;
+  }
+  .bundle-inner::before {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse at center,rgba(149,213,178,0.08),transparent 70%);
+    pointer-events:none;
+  }
+  .bundle-tag { display:inline-block; background:var(--sage); color:var(--forest); font-size:0.65rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:0.3rem 1rem; border-radius:20px; margin-bottom:1rem; }
+  .bundle-title { font-family:var(--font-display); font-size:clamp(1.5rem,3vw,2.2rem); font-weight:400; color:var(--cream); margin-bottom:0.5rem; }
+  .bundle-title em { font-style:italic; color:var(--sage); }
+  .bundle-desc { font-size:0.88rem; color:rgba(255,255,255,0.55); font-weight:300; margin-bottom:1.8rem; line-height:1.7; }
+  .bundle-price-row { display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:1.8rem; flex-wrap:wrap; }
+  .bundle-price-old { font-family:var(--font-display); font-size:1.5rem; color:rgba(255,255,255,0.3); text-decoration:line-through; }
+  .bundle-price-new { font-family:var(--font-display); font-size:2.8rem; font-weight:500; color:var(--sage); }
+  .bundle-price-label { font-size:0.75rem; color:rgba(255,255,255,0.4); letter-spacing:0.08em; }
+  .bundle-items { display:flex; gap:0.6rem; flex-wrap:wrap; justify-content:center; margin-bottom:1.8rem; }
+  .bundle-item { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); border-radius:30px; padding:0.35rem 0.9rem; font-size:0.75rem; color:rgba(255,255,255,0.7); }
+  .btn-bundle { padding:0.85rem 2.5rem; background:var(--sage); color:var(--forest); border:none; border-radius:50px; font-family:var(--font-body); font-size:0.9rem; font-weight:600; cursor:pointer; transition:var(--transition); }
+  .btn-bundle:hover { background:var(--sage-light); transform:translateY(-2px); box-shadow:0 10px 28px rgba(149,213,178,0.3); }
+
+  /* ── FAQ SECTION ── */
+  #faq-section { background:var(--cream); }
+  .faq-inner { max-width:680px; margin:0 auto; }
+  .faq-item { border-bottom:1px solid rgba(27,67,50,0.1); overflow:hidden; }
+  .faq-question { width:100%; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; background:none; border:none; cursor:pointer; text-align:left; gap:1rem; transition:var(--transition); }
+  .faq-question:hover .faq-q-text { color:var(--forest); }
+  .faq-q-text { font-weight:500; font-size:0.95rem; color:var(--charcoal); line-height:1.4; font-family:var(--font-body); }
+  .faq-icon { width:28px; height:28px; border-radius:50%; border:1px solid rgba(27,67,50,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--forest); font-size:1rem; transition:transform 0.3s ease; }
+  .faq-item.open .faq-icon { transform:rotate(45deg); background:var(--forest); color:var(--cream); border-color:var(--forest); }
+  .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+  .faq-item.open .faq-answer { max-height:300px; }
+  .faq-answer p { padding:0 0 1.2rem; font-size:0.88rem; color:var(--text-body); line-height:1.75; font-weight:300; }
+
+  /* ── STICKY ORDER BUTTON (mobile) ── */
+  .sticky-order-btn {
+    position:fixed; bottom:1.5rem; left:50%; transform:translateX(-50%);
+    z-index:450; display:none;
+    padding:0.85rem 2.2rem; background:var(--forest); color:var(--cream);
+    border:none; border-radius:50px; font-family:var(--font-body);
+    font-size:0.88rem; font-weight:500; cursor:pointer;
+    box-shadow:0 8px 30px rgba(27,67,50,0.35); transition:var(--transition);
+    white-space:nowrap; letter-spacing:0.02em;
+  }
+  .sticky-order-btn:hover { background:var(--forest-light); }
+  @media(max-width:768px){ .sticky-order-btn{ display:block; } }
+
+  /* ── COPY ORDER ID ── */
+  .btn-copy-id { padding:0.5rem 1.2rem; background:rgba(27,67,50,0.08); border:1px solid rgba(27,67,50,0.2); border-radius:30px; font-family:var(--font-body); font-size:0.78rem; color:var(--forest); cursor:pointer; transition:var(--transition); margin-top:0.5rem; display:inline-flex; align-items:center; gap:0.4rem; }
+  .btn-copy-id:hover { background:var(--forest); color:var(--cream); }
+  .btn-copy-id.copied { background:var(--forest); color:var(--cream); }
+
   /* ── ADMIN PANEL ── */
   .admin-overlay { position:fixed; inset:0; z-index:800; background:rgba(15,25,20,0.7); backdrop-filter:blur(12px); display:flex; align-items:center; justify-content:center; padding:1rem; opacity:0; pointer-events:none; transition:opacity 0.35s var(--ease); }
   .admin-overlay.active { opacity:1; pointer-events:all; }
@@ -475,7 +545,7 @@
   .admin-add-form { background:#fff; border-radius:12px; padding:1.2rem; border:1px solid rgba(27,67,50,0.1); margin-bottom:1rem; }
   .admin-add-form h4 { font-family:var(--font-display); font-size:1rem; font-weight:500; color:var(--charcoal); margin-bottom:1rem; }
   .admin-add-row { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem; }
-  .admin-add-form input, .admin-add-form select, .admin-add-form textarea { width:100%; padding:0.65rem 0.9rem; border:1px solid rgba(27,67,50,0.15); border-radius:8px; font-family:var(--font-body); font-size:0.83rem; color:var(--charcoal); background:var(--cream); outline:none; -webkit-appearance:none; }
+  .admin-add-form input, .admin-add-form select, .admin-add-form textarea { width:100%; padding:0.65rem 0.9rem; border:1px solid rgba(27,67,50,0.15); border-radius:8px; font-family:var(--font-body); font-size:0.83rem; color:var(--charcoal); background:var(--cream); outline:none; -webkit-appearance:none; appearance:none; }
   .admin-add-form textarea { min-height:70px; resize:vertical; margin-bottom:0.75rem; }
   .btn-add-order { padding:0.6rem 1.5rem; background:var(--forest); color:var(--cream); border:none; border-radius:30px; font-family:var(--font-body); font-size:0.82rem; font-weight:500; cursor:pointer; transition:var(--transition); }
   .btn-add-order:hover { background:var(--forest-light); }
@@ -506,7 +576,6 @@
     border-radius: 24px 24px 0 0; z-index: 2;
     display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
   }
-  .order-box-header-text {}
   .order-box-eyebrow { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--forest); font-weight: 500; margin-bottom: 0.3rem; }
   .order-box-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; color: var(--charcoal); line-height: 1.2; }
   .order-close {
@@ -540,7 +609,7 @@
   .order-form .form-group input:focus,
   .order-form .form-group select:focus,
   .order-form .form-group textarea:focus { border-color: rgba(27,67,50,0.4); background: #fff; box-shadow: 0 0 0 3px rgba(27,67,50,0.06); outline: none; }
-  .order-form .form-group select { -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%231B4332' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+  .order-form .form-group select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%231B4332' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
   .order-form .form-group select option { background: #fff; color: var(--charcoal); }
   .order-form textarea { min-height: 110px; resize: vertical; }
   .order-divider { height: 1px; background: rgba(27,67,50,0.08); margin: 1.3rem 0; }
@@ -596,6 +665,7 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="#templates">Templates</a></li>
     <li><a href="#trust">Reviews</a></li>
+    <li><a href="#faq-section">FAQ</a></li>
     <li><a href="#track">Track Order</a></li>
     <li><a href="#custom">Custom</a></li>
     <li><a href="#pricing">Pricing</a></li>
@@ -714,6 +784,66 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq-section">
+  <div class="section-header" style="text-align:center;">
+    <p class="section-eyebrow reveal" style="justify-content:center;">Got Questions?</p>
+    <h2 class="section-title reveal reveal-delay-1" style="max-width:100%;">Frequently <em>Asked</em></h2>
+    <div class="section-divider reveal reveal-delay-2"></div>
+  </div>
+  <div class="faq-inner">
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Kitne din mein website milegi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Zyada tar templates 24 ghante ke andar deliver ho jaati hain. Complex customizations ke liye 2–3 din lag sakte hain. Delivery timeline order form mein select kar sakte ho.</p></div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Kya main apna naam, photo aur message add kar sakta hoon?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Bilkul! Har template fully personalized hoti hai — naam, photo, message, occasion date, aur special wishes — sab kuch aapke according customize hoga.</p></div>
+    </div>
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Payment kaise karni hogi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Order submit karne ke baad hum aapko WhatsApp ya Email pe contact karenge. Payment UPI, GPay, PhonePe, ya bank transfer se ho sakti hai — delivery se pehle.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Kya website mobile pe bhi achhi dikhegi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Haan! Har DREAMVERSE template 100% mobile responsive hai. Phone, tablet, aur desktop — sab pe perfectly display hogi.</p></div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Agar design pasand nahi aya toh?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Koi baat nahi! Hum free revisions offer karte hain. Aap apne changes batao — hum jab tak aap satisfied na ho, tab tak update karte rahenge.</p></div>
+    </div>
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Website kitne time tak live rahegi?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Templates GitHub Pages pe host hoti hain jo free mein permanent live rehti hain. Aapko koi hosting cost nahi uthani padegi — link hamesha kaam karega.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Kya main ek se zyada log ko share kar sakta hoon?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Bilkul! Ek link milegi jo aap WhatsApp, Instagram, ya kisi bhi platform pe share kar sakte ho. Jitne chaaho utne logon ko bhejo — koi limit nahi.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ORDER TRACKING -->
 <section id="track" style="background:var(--cream);">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
@@ -767,6 +897,31 @@
         <button type="submit" class="btn-submit">Send Inquiry</button>
       </form>
     </div>
+  </div>
+</section>
+
+<!-- BUNDLE OFFER -->
+<section id="bundle-section">
+  <div class="bundle-inner reveal">
+    <span class="bundle-tag">🎁 Limited Offer</span>
+    <h2 class="bundle-title">Get <em>2 Templates</em> Together</h2>
+    <p class="bundle-desc">Choose any 2 premium templates and save big. Perfect for gifting two special occasions or creating a complete surprise experience.</p>
+    <div class="bundle-price-row">
+      <span class="bundle-price-old">₹598</span>
+      <span class="bundle-price-new">₹449</span>
+      <span class="bundle-price-label">for 2 templates</span>
+    </div>
+    <div class="bundle-items">
+      <span class="bundle-item">🎂 Birthday Surprise</span>
+      <span class="bundle-item">💌 Love Letter</span>
+      <span class="bundle-item">🌧 Rain & Emotion</span>
+      <span class="bundle-item">📸 MemoryVault</span>
+      <span class="bundle-item">🎬 CineVerse</span>
+      <span class="bundle-item">💜 CrushVerse</span>
+    </div>
+    <button class="btn-bundle" onclick="window.location.href='mailto:dreamverse.web@gmail.com?subject=Bundle Order - 2 Templates&body=Hi DREAMVERSE,%0A%0AI would like to order the Bundle (2 Templates) offer for ₹449.%0A%0ATemplates I want:%0A1. %0A2. %0A%0APlease guide me further.'">
+      Order Bundle — ₹449 ✦
+    </button>
   </div>
 </section>
 
@@ -999,6 +1154,10 @@
     <div class="success-order-id">
       <p class="success-order-id-label">Your Order ID</p>
       <p class="success-order-id-value" id="success-order-id">DV-1001</p>
+      <button class="btn-copy-id" id="btn-copy-id" onclick="copyOrderId()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy Order ID
+      </button>
     </div>
     <button class="btn-success-close" onclick="closeSuccess()">Done</button>
   </div>
@@ -1065,6 +1224,11 @@
 
 <!-- Admin trigger button (hidden, activated by footer secret click) -->
 <button class="admin-trigger" id="admin-trigger" title="Admin Panel" style="display:none" onclick="openAdmin()">⚙</button>
+
+<!-- STICKY ORDER BUTTON (mobile) -->
+<button class="sticky-order-btn" id="sticky-order-btn" onclick="document.getElementById('templates').scrollIntoView({behavior:'smooth'})">
+  ✦ Order a Template — ₹299
+</button>
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
@@ -1160,11 +1324,11 @@ const TEMPLATES = [
       { label: "Love-Letter-V3",  status: "live", url: "https://dream-verse.github.io/LoveLetter-3/" },
       { label: "Love-Letter-V4",  status: "live", url: "https://dream-verse.github.io/LoveLetter-4/" },
       { label: "Love-Letter-V5",  status: "live", url: "https://dream-verse.github.io/LoveLetter-5/" },
-      { label: "Love-Letter-V6",  status: "soon", url: "https://dream-verse.github.io/LoveLetter-6/" },
-      { label: "Love-Letter-V7",  status: "soon", url: "https://dream-verse.github.io/LoveLetter-7/" },
-      { label: "Love-Letter-V8",  status: "soon", url: "https://dream-verse.github.io/LoveLetter-8/" },
-      { label: "Love-Letter-V9",  status: "soon", url: "https://dream-verse.github.io/LoveLetter-9/" },
-      { label: "Love-Letter-V10", status: "soon", url: "https://dream-verse.github.io/LoveLetter-10/" }
+      { label: "Love-Letter-V6",  status: "soon" },
+      { label: "Love-Letter-V7",  status: "soon" },
+      { label: "Love-Letter-V8",  status: "soon" },
+      { label: "Love-Letter-V9",  status: "soon" },
+      { label: "Love-Letter-V10", status: "soon" }
     ]
   },
   {
@@ -1246,14 +1410,28 @@ function waitForFirebase(cb, retries = 20) {
   else { console.error('Firebase not ready'); showToast('Connection error. Try again.'); }
 }
 
+// ── Template badges & original prices config ──
+const TEMPLATE_META = {
+  birthday:    { badge: 'popular',  badgeText: '🔥 Most Popular', originalPrice: '₹599' },
+  rain:        { badge: 'trending', badgeText: '⚡ Trending',     originalPrice: '₹549' },
+  loveletter:  { badge: 'new',      badgeText: '✨ New',          originalPrice: null   },
+  memory:      { badge: null,       badgeText: null,              originalPrice: '₹549' },
+  cine:        { badge: null,       badgeText: null,              originalPrice: '₹599' },
+  crush:       { badge: 'popular',  badgeText: '💜 Fan Favourite', originalPrice: '₹499' }
+};
+
 // ── Render Template Cards ──
 function renderCards() {
   const grid = document.getElementById('templates-grid');
   TEMPLATES.forEach((t, i) => {
     const delay = i % 3 === 0 ? '' : i % 3 === 1 ? 'reveal-delay-1' : 'reveal-delay-2';
+    const meta  = TEMPLATE_META[t.id] || {};
+    const badgeHTML = meta.badge ? `<span class="template-badge badge-${meta.badge}">${meta.badgeText}</span>` : '';
+    const originalPriceHTML = meta.originalPrice ? `<span class="price-original">${meta.originalPrice}</span>` : '';
     grid.innerHTML += `
       <article class="template-card reveal ${delay}">
         <div class="template-preview ${t.theme}">
+          ${badgeHTML}
           <span class="preview-emoji">${t.emoji}</span>
           ${t.name}
           <span class="preview-tag">${t.tag}</span>
@@ -1264,7 +1442,9 @@ function renderCards() {
           <div class="template-footer">
             <div class="template-price">
               <span class="price-from">Starting From</span>
-              <span class="price-amount">₹299</span>
+              <div style="display:flex;align-items:baseline;gap:0.3rem;flex-wrap:wrap;">
+                <span class="price-amount">₹299</span>${originalPriceHTML}
+              </div>
             </div>
             <div class="template-actions">
               <button class="btn-versions" onclick="openModal('${t.id}')">
@@ -1640,13 +1820,41 @@ function handleContact(e) {
   showToast('Opening your email app…');
 }
 
+// ── FAQ Toggle ──
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── Copy Order ID ──
+function copyOrderId() {
+  const id  = document.getElementById('success-order-id').textContent;
+  const btn = document.getElementById('btn-copy-id');
+  navigator.clipboard.writeText(id).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!`;
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Order ID`;
+    }, 2500);
+  }).catch(() => showToast('Order ID: ' + id));
+}
+
 // ── Nav ──
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 window.addEventListener('scroll', () => {
-  document.getElementById('main-nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(27,67,50,0.08)' : 'none';
+  const scrollY = window.scrollY;
+  document.getElementById('main-nav').style.boxShadow = scrollY > 60 ? '0 2px 20px rgba(27,67,50,0.08)' : 'none';
+  // Hide sticky btn in hero, show after
+  const stickyBtn = document.getElementById('sticky-order-btn');
+  if (stickyBtn) {
+    stickyBtn.style.display = scrollY > 500 ? 'block' : 'none';
+  }
 }, { passive: true });
 
 // ── Reveal on scroll ──
