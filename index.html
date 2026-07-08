@@ -3,7 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DREAMVERSE — Digital Templates</title>
+
+<!-- Primary SEO -->
+<title>DREAMVERSE — Premium Digital Template Marketplace</title>
+<meta name="description" content="DREAMVERSE is a premium digital template marketplace offering beautiful website templates for birthdays, memories, romance and more. Starting from ₹299.">
+<meta name="keywords" content="digital templates, birthday website, surprise website, love letter, crush website, dreamverse, premium templates, website templates india">
+<meta name="author" content="DREAMVERSE">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://dream-verse.github.io/">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Theme & Mobile -->
+<meta name="theme-color" content="#3D4F8C">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="DREAMVERSE">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="DREAMVERSE — Premium Digital Template Marketplace">
+<meta property="og:description" content="Premium website templates for moments that matter. Birthdays, love letters, memories & more. Starting from ₹299.">
+<meta property="og:url" content="https://dream-verse.github.io/">
+<meta property="og:site_name" content="DREAMVERSE">
+<meta property="og:image" content="https://dream-verse.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DREAMVERSE — Premium Digital Template Marketplace">
+<meta name="twitter:description" content="Premium website templates for moments that matter. Starting from ₹299.">
+<meta name="twitter:image" content="https://dream-verse.github.io/og-image.png">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://dream-verse.github.io/#website",
+      "url": "https://dream-verse.github.io/",
+      "name": "DREAMVERSE",
+      "description": "Premium Digital Template Marketplace",
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dream-verse.github.io/#organization",
+      "name": "DREAMVERSE",
+      "url": "https://dream-verse.github.io/",
+      "email": "dreamverse.web@gmail.com",
+      "sameAs": ["https://www.instagram.com/dreamverse.web/"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "dreamverse.web@gmail.com",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "DREAMVERSE Templates",
+      "url": "https://dream-verse.github.io/#templates",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Birthday Surprise Template","url":"https://dream-verse.github.io/BarthWEB1/"},
+        {"@type":"ListItem","position":2,"name":"Rain & Emotion Template","url":"https://dream-verse.github.io/APLOGY-WEB1/"},
+        {"@type":"ListItem","position":3,"name":"Love Letter Template","url":"https://dream-verse.github.io/Love-Letter-V1/"},
+        {"@type":"ListItem","position":4,"name":"CrushVerse Template","url":"https://dream-verse.github.io/CRUSH-SURPRICE-/"}
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -601,8 +681,59 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 @media(max-width:768px){.sticky-cta{display:block;}}
 
 /* ══════════════════════════════
-   RESPONSIVE
+   ADMIN PANEL
 ══════════════════════════════ */
+.admin-ov{position:fixed;inset:0;z-index:800;background:rgba(30,26,46,0.7);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.35s var(--ease);}
+.admin-ov.active{opacity:1;pointer-events:all;}
+.admin-bx{background:var(--page-bg);border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;box-shadow:0 40px 100px rgba(30,26,46,0.3);transform:translateY(30px);transition:transform 0.38s var(--ease);}
+.admin-ov.active .admin-bx{transform:translateY(0);}
+.admin-head{padding:1.4rem 1.8rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#1E1A2E,#3D4F8C);border-radius:20px 20px 0 0;}
+.admin-head h2{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#fff;}
+.admin-cls{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;cursor:pointer;color:#fff;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:all 0.3s;}
+.admin-cls:hover{background:rgba(255,255,255,0.2);}
+.admin-login-box{padding:2rem 1.8rem;}
+.admin-login-box label{display:block;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);margin-bottom:0.4rem;font-weight:500;}
+.admin-login-box input{width:100%;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:10px;font-family:var(--sans);font-size:0.9rem;color:var(--text-dark);background:#fff;outline:none;margin-bottom:1rem;transition:border-color 0.3s;}
+.admin-login-box input:focus{border-color:var(--lavender);}
+.btn-admin-login{width:100%;padding:0.85rem;background:linear-gradient(135deg,var(--sky),var(--rose));color:#fff;border:none;border-radius:50px;font-family:var(--sans);font-size:0.9rem;font-weight:500;cursor:pointer;transition:all 0.3s;}
+.btn-admin-login:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(91,107,174,0.3);}
+.admin-err{color:#E53E3E;font-size:0.8rem;margin-top:0.5rem;display:none;}
+.admin-body-box{padding:1.4rem 1.8rem;display:none;}
+.admin-body-box.visible{display:block;}
+.admin-tabs{display:flex;gap:0.5rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.admin-tab{padding:0.48rem 1.1rem;border-radius:30px;border:1px solid var(--border);background:transparent;font-family:var(--sans);font-size:0.78rem;color:var(--text-mid);cursor:pointer;transition:all 0.3s;}
+.admin-tab.active{background:linear-gradient(135deg,var(--sky),var(--rose));color:#fff;border-color:transparent;}
+.order-row{background:#fff;border-radius:12px;padding:1.1rem 1.2rem;border:1px solid var(--border);margin-bottom:0.75rem;}
+.order-row-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;}
+.order-row-id{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--sky);}
+.order-row-tpl{font-size:0.8rem;color:var(--text-mid);margin-bottom:0.3rem;}
+.order-row-cust{font-size:0.78rem;color:var(--text-soft);margin-bottom:0.6rem;}
+.status-pill{display:inline-flex;align-items:center;gap:0.3rem;padding:0.26rem 0.8rem;border-radius:20px;font-size:0.68rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;}
+.status-pill.pending{background:#FFFBEB;color:#92400E;border:1px solid #FDE68A;}
+.status-pill.confirmed{background:#F0FDF4;color:#166534;border:1px solid #BBF7D0;}
+.status-pill.delivered{background:#EEF2FF;color:#3730A3;border:1px solid #C7D2FE;}
+.status-pill.cancelled{background:#FFF0F3;color:#7B3240;border:1px solid #FFD6DC;}
+.order-actions-row{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.btn-st{padding:0.38rem 0.88rem;border-radius:20px;font-family:var(--sans);font-size:0.73rem;font-weight:500;cursor:pointer;transition:all 0.3s;border:1px solid;}
+.btn-confirm{background:#F0FDF4;color:#166534;border-color:#BBF7D0;}
+.btn-confirm:hover{background:#166534;color:#fff;}
+.btn-deliver{background:#EEF2FF;color:#3730A3;border-color:#C7D2FE;}
+.btn-deliver:hover{background:#3730A3;color:#fff;}
+.btn-cancel-o{background:#FFF8F0;color:#C05621;border-color:#FBD38D;}
+.btn-cancel-o:hover{background:#C05621;color:#fff;}
+.btn-del-o{background:#FFF0F3;color:#7B3240;border-color:#FFD6DC;}
+.btn-del-o:hover{background:#7B3240;color:#fff;}
+.admin-empty{text-align:center;padding:2rem;color:var(--text-soft);font-size:0.88rem;}
+.admin-add-form{background:#fff;border-radius:12px;padding:1.2rem;border:1px solid var(--border);margin-bottom:1rem;}
+.admin-add-form h4{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--text-dark);margin-bottom:1rem;}
+.admin-add-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;}
+.admin-add-form input,.admin-add-form select,.admin-add-form textarea{width:100%;padding:0.62rem 0.88rem;border:1px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:0.82rem;color:var(--text-dark);background:var(--lav-bg);outline:none;-webkit-appearance:none;appearance:none;}
+.admin-add-form textarea{min-height:65px;resize:vertical;margin-bottom:0.75rem;}
+.btn-add-ord{padding:0.6rem 1.5rem;background:linear-gradient(135deg,var(--sky),var(--rose));color:#fff;border:none;border-radius:30px;font-family:var(--sans);font-size:0.82rem;font-weight:500;cursor:pointer;transition:all 0.3s;}
+.btn-add-ord:hover{transform:translateY(-1px);}
+.admin-trigger{position:fixed;bottom:1.5rem;right:1.5rem;z-index:500;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--rose));color:#fff;border:none;cursor:pointer;font-size:1.2rem;display:none;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(91,107,174,0.3);transition:all 0.3s;}
+.admin-trigger:hover{transform:scale(1.1);}
+
 @media(max-width:900px){
   .hero-trust-bar{grid-template-columns:repeat(2,1fr);}
   .reviews-grid{grid-template-columns:1fr 1fr;}
@@ -992,6 +1123,66 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
   </div>
 </div>
 
+<!-- ══ ADMIN PANEL ══ -->
+<div class="admin-ov" id="admin-overlay">
+  <div class="admin-bx">
+    <div class="admin-head">
+      <h2>⚙ DREAMVERSE Admin</h2>
+      <button class="admin-cls" onclick="closeAdmin()">✕</button>
+    </div>
+    <!-- Login -->
+    <div class="admin-login-box" id="admin-login">
+      <label for="admin-pass">Admin Password</label>
+      <input type="password" id="admin-pass" placeholder="Enter password" onkeydown="if(event.key==='Enter')adminLogin()">
+      <button class="btn-admin-login" onclick="adminLogin()">Login</button>
+      <p class="admin-err" id="admin-err">Incorrect password. Try again.</p>
+    </div>
+    <!-- Dashboard -->
+    <div class="admin-body-box" id="admin-body">
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="adminTab('pending',this)">🕐 Pending</button>
+        <button class="admin-tab" onclick="adminTab('confirmed',this)">✅ Confirmed</button>
+        <button class="admin-tab" onclick="adminTab('delivered',this)">📦 Delivered</button>
+        <button class="admin-tab" onclick="adminTab('cancelled',this)">❌ Cancelled</button>
+        <button class="admin-tab" onclick="adminTab('add',this)">➕ Add Order</button>
+      </div>
+      <div id="admin-tab-pending"><div id="orders-pending"></div></div>
+      <div id="admin-tab-confirmed" style="display:none"><div id="orders-confirmed"></div></div>
+      <div id="admin-tab-delivered" style="display:none"><div id="orders-delivered"></div></div>
+      <div id="admin-tab-cancelled" style="display:none"><div id="orders-cancelled"></div></div>
+      <div id="admin-tab-add" style="display:none">
+        <div class="admin-add-form">
+          <h4>Add / Update Order</h4>
+          <div class="admin-add-row">
+            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Order ID</label><input type="text" id="add-orderid" placeholder="DV-1234"></div>
+            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Customer Name</label><input type="text" id="add-name" placeholder="Customer name"></div>
+          </div>
+          <div class="admin-add-row">
+            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Template</label><input type="text" id="add-template" placeholder="Birthday Surprise"></div>
+            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Version</label><input type="text" id="add-version" placeholder="V1"></div>
+          </div>
+          <div class="admin-add-row">
+            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">WhatsApp</label><input type="text" id="add-wp" placeholder="+91 98765 43210"></div>
+            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Status</label>
+              <select id="add-status">
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="delivered">Delivered</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </div>
+          </div>
+          <textarea id="add-note" placeholder="Internal note (optional)…"></textarea>
+          <button class="btn-add-ord" onclick="adminAddOrder()">Save Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Admin trigger (secret) -->
+<button class="admin-trigger" id="admin-trigger" onclick="openAdmin()">⚙</button>
+
 <button class="sticky-cta" id="sticky-cta" onclick="document.getElementById('templates').scrollIntoView({behavior:'smooth'})">✦ Order a Template — ₹299</button>
 <div class="toast" id="toast"></div>
 
@@ -1217,6 +1408,138 @@ function handleContact(e){
 // ── FAQ ──
 function toggleFaq(btn){const item=btn.closest('.faq-item');const was=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open');}
 
+// ── Admin Panel ──
+const ADMIN_PASS = 'dreamverse2025';
+let adminLoggedIn = false;
+let currentAdminTab = 'pending';
+
+function openAdmin(){
+  document.getElementById('admin-overlay').classList.add('active');
+  document.body.style.overflow='hidden';
+  if(adminLoggedIn) showAdminBody();
+}
+function closeAdmin(){
+  document.getElementById('admin-overlay').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.getElementById('admin-overlay').addEventListener('click',e=>{
+  if(e.target===document.getElementById('admin-overlay'))closeAdmin();
+});
+
+function adminLogin(){
+  const pass=document.getElementById('admin-pass').value;
+  if(pass===ADMIN_PASS){
+    adminLoggedIn=true;
+    showAdminBody();
+  } else {
+    document.getElementById('admin-err').style.display='block';
+  }
+}
+
+function showAdminBody(){
+  document.getElementById('admin-login').style.display='none';
+  document.getElementById('admin-body').classList.add('visible');
+  renderAdminOrders('pending');
+}
+
+function adminTab(tab,btn){
+  currentAdminTab=tab;
+  ['pending','confirmed','delivered','cancelled','add'].forEach(t=>{
+    document.getElementById('admin-tab-'+t).style.display=t===tab?'block':'none';
+  });
+  document.querySelectorAll('.admin-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(tab!=='add') renderAdminOrders(tab);
+}
+
+function renderAdminOrders(status){
+  const el=document.getElementById('orders-'+status);
+  el.innerHTML=`<div class="admin-empty">⏳ Loading orders…</div>`;
+  waitFB(()=>{
+    window._get(window._ref(window._db,'orders')).then(snap=>{
+      if(!snap.exists()){el.innerHTML=`<div class="admin-empty">No ${status} orders yet.</div>`;return;}
+      const all=Object.values(snap.val());
+      const filtered=all.filter(o=>o.status===status);
+      if(!filtered.length){el.innerHTML=`<div class="admin-empty">No ${status} orders yet.</div>`;return;}
+      filtered.sort((a,b)=>new Date(b.time)-new Date(a.time));
+      el.innerHTML=filtered.map(o=>`
+        <div class="order-row">
+          <div class="order-row-top">
+            <span class="order-row-id">${o.id}</span>
+            <span class="status-pill ${o.status}">${o.status.toUpperCase()}</span>
+          </div>
+          <p class="order-row-tpl">📦 ${o.template||'—'} · ${o.version||'—'}</p>
+          <p class="order-row-cust">👤 ${o.name||'—'} &nbsp;|&nbsp; 📱 ${o.whatsapp||'—'}</p>
+          <p class="order-row-cust">📅 ${o.time||'—'} &nbsp;|&nbsp; 🚚 ${o.delivery||'—'}</p>
+          ${o.requirements?`<p style="font-size:0.76rem;color:var(--text-soft);margin:0.3rem 0 0.7rem;line-height:1.5;">📝 ${o.requirements.substring(0,120)}${o.requirements.length>120?'…':''}</p>`:''}
+          <div class="order-actions-row">
+            ${o.status==='pending'?`<button class="btn-st btn-confirm" onclick="updateStatus('${o.id}','confirmed')">✅ Confirm</button>`:''}
+            ${o.status==='confirmed'?`<button class="btn-st btn-deliver" onclick="updateStatus('${o.id}','delivered')">📦 Delivered</button>`:''}
+            ${(o.status==='pending'||o.status==='confirmed')?`<button class="btn-st btn-cancel-o" onclick="cancelOrd('${o.id}')">❌ Cancel</button>`:''}
+            <button class="btn-st btn-del-o" onclick="deleteOrd('${o.id}')">🗑 Delete</button>
+          </div>
+        </div>`).join('');
+    }).catch(()=>{el.innerHTML=`<div class="admin-empty" style="color:#E53E3E;">Connection error.</div>`;});
+  });
+}
+
+function updateStatus(id,newStatus){
+  waitFB(()=>{
+    window._update(window._ref(window._db,'orders/'+id),{status:newStatus})
+      .then(()=>{ showToast(`✅ Order ${id} → ${newStatus}`); renderAdminOrders(currentAdminTab); })
+      .catch(()=>showToast('Update failed.'));
+  });
+}
+
+function cancelOrd(id){
+  if(!confirm(`Cancel order ${id}?`))return;
+  waitFB(()=>{
+    window._update(window._ref(window._db,'orders/'+id),{status:'cancelled'})
+      .then(()=>{ showToast(`❌ Order ${id} cancelled`); renderAdminOrders(currentAdminTab); })
+      .catch(()=>showToast('Cancel failed.'));
+  });
+}
+
+function deleteOrd(id){
+  if(!confirm(`Delete order ${id}? Cannot be undone.`))return;
+  waitFB(()=>{
+    window._remove(window._ref(window._db,'orders/'+id))
+      .then(()=>{ showToast('Order deleted'); renderAdminOrders(currentAdminTab); })
+      .catch(()=>showToast('Delete failed.'));
+  });
+}
+
+function adminAddOrder(){
+  const id=document.getElementById('add-orderid').value.trim().toUpperCase();
+  const name=document.getElementById('add-name').value.trim();
+  const template=document.getElementById('add-template').value.trim();
+  const version=document.getElementById('add-version').value.trim();
+  const whatsapp=document.getElementById('add-wp').value.trim();
+  const status=document.getElementById('add-status').value;
+  const note=document.getElementById('add-note').value.trim();
+  if(!id||!name){showToast('Order ID and Name required');return;}
+  const entry={id,name,template,version,whatsapp,status,note,time:new Date().toLocaleString('en-IN')};
+  waitFB(()=>{
+    window._set(window._ref(window._db,'orders/'+id),entry)
+      .then(()=>{
+        ['add-orderid','add-name','add-template','add-version','add-wp','add-note'].forEach(f=>document.getElementById(f).value='');
+        showToast(`✅ Order ${id} saved!`);
+        renderAdminOrders('pending');
+      }).catch(()=>showToast('Save failed.'));
+  });
+}
+
+// ── Secret footer trigger — 5 clicks ──
+let secretClicks=0;
+document.getElementById('footer-bottom').addEventListener('click',()=>{
+  secretClicks++;
+  if(secretClicks>=5){
+    secretClicks=0;
+    document.getElementById('admin-trigger').style.display='flex';
+    openAdmin();
+  }
+});
+
 // ── Nav ──
 document.getElementById('nav-hamburger').addEventListener('click',()=>document.getElementById('nav-links').classList.toggle('open'));
 document.getElementById('nav-links').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav-links').classList.remove('open')));
@@ -1224,11 +1547,11 @@ window.addEventListener('scroll',()=>{
   const y=window.scrollY;
   document.getElementById('main-nav').classList.toggle('scrolled',y>60);
   const sc=document.getElementById('sticky-cta');
-  if(sc)sc.style.display=y>600?'block':'none';
+  if(sc) sc.style.display = y > 600 ? 'block' : 'none';
 },{passive:true});
 
 // ── ESC ──
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeOrderForm();closeSuccess();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeOrderForm();closeSuccess();closeAdmin();}});
 
 // ── Reveal ──
 const io=new IntersectionObserver(entries=>{
