@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Analytics 4 — loaded async so it never blocks page rendering.
+     IP addresses are anonymized by default in GA4. No PII (names, emails,
+     phone numbers) is ever sent in any event — only template/order metadata. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-17JJFSW0XH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-17JJFSW0XH');
+</script>
+
 <!-- Primary SEO -->
 <title>DREAMVERSE — Premium Digital Template Marketplace</title>
 <meta name="description" content="DREAMVERSE is a premium digital template marketplace offering beautiful website templates for birthdays, memories, romance and more. Starting from ₹299.">
@@ -79,6 +90,53 @@
         {"@type":"ListItem","position":2,"name":"Rain & Emotion Template","url":"https://dream-verse.github.io/APLOGY-WEB1/"},
         {"@type":"ListItem","position":3,"name":"Love Letter Template","url":"https://dream-verse.github.io/Love-Letter-V1/"},
         {"@type":"ListItem","position":4,"name":"CrushVerse Template","url":"https://dream-verse.github.io/CRUSH-SURPRICE-/"}
+      ]
+    },
+    {
+      "@type": "Product",
+      "name": "Birthday Surprise Template",
+      "image": "https://dream-verse.github.io/card1.png",
+      "description": "A heartfelt, interactive birthday experience with animated reveals and personalised messages.",
+      "brand": {"@type":"Brand","name":"DREAMVERSE"},
+      "offers": {"@type":"Offer","priceCurrency":"INR","price":"299","availability":"https://schema.org/InStock","url":"https://dream-verse.github.io/#templates"},
+      "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"856"}
+    },
+    {
+      "@type": "Product",
+      "name": "Rain & Emotion Template",
+      "image": "https://dream-verse.github.io/card2.png",
+      "description": "An atmospheric digital canvas with rain animations — perfect for heartfelt messages.",
+      "brand": {"@type":"Brand","name":"DREAMVERSE"},
+      "offers": {"@type":"Offer","priceCurrency":"INR","price":"299","availability":"https://schema.org/InStock","url":"https://dream-verse.github.io/#templates"},
+      "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"632"}
+    },
+    {
+      "@type": "Product",
+      "name": "Love Letter Template",
+      "image": "https://dream-verse.github.io/card3.png",
+      "description": "A beautifully crafted digital love letter with elegant animations and heartfelt moments.",
+      "brand": {"@type":"Brand","name":"DREAMVERSE"},
+      "offers": {"@type":"Offer","priceCurrency":"INR","price":"299","availability":"https://schema.org/InStock","url":"https://dream-verse.github.io/#templates"},
+      "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"421"}
+    },
+    {
+      "@type": "Product",
+      "name": "CrushVerse Template",
+      "image": "https://dream-verse.github.io/card4.png",
+      "description": "A romantic digital letter — intimate design for confessions and affectionate surprises.",
+      "brand": {"@type":"Brand","name":"DREAMVERSE"},
+      "offers": {"@type":"Offer","priceCurrency":"INR","price":"299","availability":"https://schema.org/InStock","url":"https://dream-verse.github.io/#templates"},
+      "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"558"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Kitne din mein website milegi?","acceptedAnswer":{"@type":"Answer","text":"Zyada tar templates 24 ghante ke andar deliver ho jaati hain. Complex customizations ke liye 2–3 din lag sakte hain."}},
+        {"@type":"Question","name":"Kya main apna naam, photo aur message add kar sakta hoon?","acceptedAnswer":{"@type":"Answer","text":"Bilkul! Har template fully personalized hoti hai — naam, photo, message, occasion date sab customize hoga."}},
+        {"@type":"Question","name":"Payment kaise karni hogi?","acceptedAnswer":{"@type":"Answer","text":"Order ke baad hum WhatsApp ya Email pe contact karenge. Payment UPI, GPay, ya bank transfer se hogi."}},
+        {"@type":"Question","name":"Kya website mobile pe bhi achhi dikhegi?","acceptedAnswer":{"@type":"Answer","text":"Haan! Har DREAMVERSE template 100% mobile responsive hai. Phone, tablet, desktop — sab pe perfectly display hogi."}},
+        {"@type":"Question","name":"Agar design pasand nahi aya toh?","acceptedAnswer":{"@type":"Answer","text":"Koi baat nahi! Free revisions offer karte hain — jab tak aap satisfied na hon tab tak update karte rahenge."}},
+        {"@type":"Question","name":"Website kitne time tak live rahegi?","acceptedAnswer":{"@type":"Answer","text":"GitHub Pages pe host hoti hai — free mein permanent live. Koi hosting cost nahi, link hamesha kaam karega."}}
       ]
     }
   ]
@@ -485,7 +543,7 @@ h1.hero-title .hero-highlight{
 .custom-form{background:rgba(255,255,255,0.06);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem;}
 .custom-form h3{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#fff;margin-bottom:1.4rem;}
 .cf{margin-bottom:0.9rem;}
-.cf label{display:block;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:0.38rem;}
+.cf label{display:block;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.62);margin-bottom:0.38rem;}
 .cf input,.cf textarea,.cf select{width:100%;padding:0.7rem 0.95rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-family:var(--sans);font-size:0.86rem;font-weight:300;outline:none;transition:border-color 0.3s;-webkit-appearance:none;appearance:none;}
 .cf input::placeholder,.cf textarea::placeholder{color:rgba(255,255,255,0.2);}
 .cf input:focus,.cf textarea:focus,.cf select:focus{border-color:rgba(212,168,85,0.5);}
@@ -584,14 +642,14 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 .footer-brand{display:flex;align-items:center;gap:0.6rem;}
 .footer-logo-img{width:32px;height:32px;object-fit:contain;opacity:0.9;}
 .footer-brand-name{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--horizon);letter-spacing:0.12em;}
-.footer-tagline{font-size:0.72rem;color:rgba(255,255,255,0.28);margin-top:0.15rem;}
+.footer-tagline{font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.15rem;}
 .footer-links{display:flex;gap:1.8rem;list-style:none;}
-.footer-links a{font-size:0.76rem;color:rgba(255,255,255,0.33);text-decoration:none;transition:color 0.3s;}
+.footer-links a{font-size:0.76rem;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.3s;}
 .footer-links a:hover{color:var(--horizon);}
 .footer-social{display:flex;gap:0.6rem;}
 .soc-btn{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.35);text-decoration:none;transition:all 0.3s;}
 .soc-btn:hover{border-color:var(--horizon);color:var(--horizon);}
-.footer-bottom-bar{padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.2);letter-spacing:0.06em;display:flex;align-items:center;justify-content:center;gap:0.4rem;}
+.footer-bottom-bar{padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.42);letter-spacing:0.06em;display:flex;align-items:center;justify-content:center;gap:0.4rem;}
 
 /* ══════════════════════════════
    VERSION MODAL
@@ -600,6 +658,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 .modal-ov.active{opacity:1;pointer-events:all;}
 .modal-bx{background:var(--page-bg);border:1px solid var(--border);border-radius:24px;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;box-shadow:0 32px 80px rgba(30,26,46,0.2);transform:translateY(28px) scale(0.97);transition:transform 0.38s var(--ease);padding:2.2rem;position:relative;}
 .modal-ov.active .modal-bx{transform:translateY(0) scale(1);}
+.modal-bx:focus,.order-bx:focus,.suc-bx:focus{outline:none;}
 .modal-cls{position:absolute;top:1.1rem;right:1.1rem;width:30px;height:30px;border-radius:50%;background:var(--lav-bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-soft);font-size:0.9rem;transition:all 0.3s;}
 .modal-cls:hover{background:var(--lavender);color:#fff;transform:rotate(90deg);}
 .modal-em{font-size:2rem;margin-bottom:0.5rem;display:block;}
@@ -767,7 +826,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 <!-- ══ NAV ══ -->
 <nav id="main-nav">
   <a href="#" class="nav-brand">
-    <img src="logo.png" alt="DREAMVERSE" class="nav-logo-img">
+    <img src="logo.png" alt="DREAMVERSE" class="nav-logo-img" width="38" height="38">
     <div class="nav-brand-text">
       <span class="nav-brand-name">DREAMVERSE</span>
       <span class="nav-brand-sub">Digital Templates</span>
@@ -781,7 +840,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
     <li><a href="#custom-section">Custom</a></li>
     <li><a href="#pricing-section">Pricing</a></li>
     <li><a href="#contact-section">Contact</a></li>
-    <li><a href="#custom-section" class="nav-cta">Get a Quote</a></li>
+    <li><a href="#custom-section" class="nav-cta" onclick="trackEvent('cta_click',{cta_name:'nav_get_quote'})">Get a Quote</a></li>
   </ul>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -791,7 +850,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-image-wrap">
-    <img src="hero-bg.jpg" alt="DREAMVERSE background">
+    <img src="hero-bg.jpg" alt="DREAMVERSE background" width="1920" height="1280" loading="eager" fetchpriority="high" decoding="async">
   </div>
   <div class="hero-content">
     <p class="hero-eyebrow">Premium Digital Templates</p>
@@ -801,11 +860,11 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
     </h1>
     <p class="hero-subtitle">Beautifully crafted digital templates for life's special moments.</p>
     <div class="hero-btns">
-      <a href="#templates" class="btn-hero-primary">
+      <a href="#templates" class="btn-hero-primary" onclick="trackEvent('cta_click',{cta_name:'hero_explore_templates'})">
         Explore Templates
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="#custom-section" class="btn-hero-outline">
+      <a href="#custom-section" class="btn-hero-outline" onclick="trackEvent('cta_click',{cta_name:'hero_request_custom'})">
         Request Custom
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="4" height="4" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="8" y="2" width="4" height="4" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="8" width="4" height="4" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="8" y="8" width="4" height="4" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
       </a>
@@ -903,7 +962,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
       <span class="bundle-chip">🌧 Rain & Emotion</span>
       <span class="bundle-chip">💜 CrushVerse</span>
     </div>
-    <button class="btn-bundle" onclick="window.location.href='mailto:dreamverse.web@gmail.com?subject=Bundle Order - 2 Templates&body=Hi DREAMVERSE, I want the Bundle offer (₹449). My 2 templates: 1. 2.'">Order Bundle — ₹449 ✦</button>
+    <button class="btn-bundle" onclick="trackEvent('cta_click',{cta_name:'bundle_order'});window.location.href='mailto:dreamverse.web@gmail.com?subject=Bundle Order - 2 Templates&body=Hi DREAMVERSE, I want the Bundle offer (₹449). My 2 templates: 1. 2.'">Order Bundle — ₹449 ✦</button>
   </div>
 </section>
 
@@ -955,18 +1014,18 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
     <div class="price-card reveal">
       <p class="price-tier">Starter</p><p class="price-amount">₹299</p><p class="price-desc">One-time payment</p>
       <ul class="price-features"><li>1 Premium template</li><li>Personalised content</li><li>Mobile responsive</li><li>1 round of revisions</li><li>Delivery in 24 hrs</li></ul>
-      <a href="mailto:dreamverse.web@gmail.com?subject=Starter Plan Order" class="btn-price">Get Started</a>
+      <a href="mailto:dreamverse.web@gmail.com?subject=Starter Plan Order" class="btn-price" onclick="trackEvent('cta_click',{cta_name:'pricing_starter'})">Get Started</a>
     </div>
     <div class="price-card featured reveal d1">
       <span class="price-pop">Most Popular</span>
       <p class="price-tier">Premium</p><p class="price-amount">₹499</p><p class="price-desc">One-time payment</p>
       <ul class="price-features"><li>1 Premium template</li><li>Full personalisation</li><li>Mobile responsive</li><li>3 rounds of revisions</li><li>Priority delivery</li><li>Custom domain setup</li></ul>
-      <a href="mailto:dreamverse.web@gmail.com?subject=Premium Plan Order" class="btn-price">Get Started</a>
+      <a href="mailto:dreamverse.web@gmail.com?subject=Premium Plan Order" class="btn-price" onclick="trackEvent('cta_click',{cta_name:'pricing_premium'})">Get Started</a>
     </div>
     <div class="price-card reveal d2">
       <p class="price-tier">Custom</p><p class="price-amount">₹999+</p><p class="price-desc">Project-based</p>
       <ul class="price-features"><li>Built from scratch</li><li>Unique design</li><li>Advanced animations</li><li>Unlimited revisions</li><li>Dedicated support</li><li>Full source code</li></ul>
-      <a href="#custom-section" class="btn-price">Request Quote</a>
+      <a href="#custom-section" class="btn-price" onclick="trackEvent('cta_click',{cta_name:'pricing_custom'})">Request Quote</a>
     </div>
   </div>
 </section>
@@ -1005,8 +1064,8 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
       <p class="sec-label reveal">Get in Touch</p>
       <h2 class="sec-title reveal d1">Let's create something <em>wonderful</em></h2>
       <p style="font-size:0.88rem;color:var(--text-soft);font-weight:300;margin:0.5rem 0 2rem;" class="reveal d2">Have a question or special request? We'd love to hear from you.</p>
-      <div class="contact-method reveal d2"><div class="contact-ic">✉</div><div><p class="contact-lbl">Email</p><p class="contact-val"><a href="mailto:dreamverse.web@gmail.com">dreamverse.web@gmail.com</a></p></div></div>
-      <div class="contact-method reveal d3"><div class="contact-ic">◎</div><div><p class="contact-lbl">Instagram</p><p class="contact-val"><a href="https://www.instagram.com/dreamverse.web/" target="_blank" rel="noopener">@dreamverse.web</a></p></div></div>
+      <div class="contact-method reveal d2"><div class="contact-ic">✉</div><div><p class="contact-lbl">Email</p><p class="contact-val"><a href="mailto:dreamverse.web@gmail.com" onclick="trackEvent('contact_click',{contact_method:'email_link'})">dreamverse.web@gmail.com</a></p></div></div>
+      <div class="contact-method reveal d3"><div class="contact-ic">◎</div><div><p class="contact-lbl">Instagram</p><p class="contact-val"><a href="https://www.instagram.com/dreamverse.web/" target="_blank" rel="noopener" onclick="trackEvent('instagram_click',{link_location:'contact_section'})">@dreamverse.web</a></p></div></div>
       <div class="contact-method reveal"><div class="contact-ic">⏱</div><div><p class="contact-lbl">Response Time</p><p class="contact-val">Usually within 2–4 hours</p></div></div>
     </div>
     <div class="contact-form-box reveal d1">
@@ -1028,7 +1087,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
   <div class="footer-top">
     <div>
       <div class="footer-brand">
-        <img src="logo.png" alt="DREAMVERSE" class="footer-logo-img">
+        <img src="logo.png" alt="DREAMVERSE" class="footer-logo-img" width="32" height="32">
         <div><p class="footer-brand-name">DREAMVERSE</p></div>
       </div>
       <p class="footer-tagline">Creating Digital Experiences</p>
@@ -1040,10 +1099,10 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
       <li><a href="#contact-section">Contact</a></li>
     </ul>
     <div class="footer-social">
-      <a href="https://www.instagram.com/dreamverse.web/" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">
+      <a href="https://www.instagram.com/dreamverse.web/" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram" onclick="trackEvent('instagram_click',{link_location:'footer'})">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
       </a>
-      <a href="mailto:dreamverse.web@gmail.com" class="soc-btn" aria-label="Email">
+      <a href="mailto:dreamverse.web@gmail.com" class="soc-btn" aria-label="Email" onclick="trackEvent('contact_click',{contact_method:'footer_email_icon'})">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
       </a>
     </div>
@@ -1056,8 +1115,8 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 
 <!-- ══ MODALS ══ -->
 <div class="modal-ov" id="modal-overlay">
-  <div class="modal-bx">
-    <button class="modal-cls" id="modal-close">✕</button>
+  <div class="modal-bx" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <button class="modal-cls" id="modal-close" aria-label="Close">✕</button>
     <span class="modal-em" id="modal-emoji"></span>
     <h2 class="modal-ttl" id="modal-title"></h2>
     <p class="modal-sub" id="modal-subtitle"></p>
@@ -1070,10 +1129,10 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 </div>
 
 <div class="order-ov" id="order-overlay">
-  <div class="order-bx">
+  <div class="order-bx" role="dialog" aria-modal="true" aria-labelledby="order-title" tabindex="-1">
     <div class="order-head">
       <div><p class="order-ey">Place Your Order</p><h2 class="order-ttl" id="order-title">Order Template</h2></div>
-      <button class="order-cls" id="order-close">✕</button>
+      <button class="order-cls" id="order-close" aria-label="Close order form">✕</button>
     </div>
     <div class="order-body">
       <div class="af-grid">
@@ -1107,9 +1166,9 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 </div>
 
 <div class="suc-ov" id="success-overlay">
-  <div class="suc-bx">
-    <span class="suc-icon">✅</span>
-    <h2 class="suc-title">Order Submitted!</h2>
+  <div class="suc-bx" role="dialog" aria-modal="true" aria-labelledby="suc-title" tabindex="-1">
+    <span class="suc-icon" aria-hidden="true">✅</span>
+    <h2 class="suc-title" id="suc-title">Order Submitted!</h2>
     <p class="suc-msg">Your request has been sent to DREAMVERSE.<br>We will contact you soon via WhatsApp or Email.</p>
     <div class="suc-id-box">
       <p class="suc-id-lbl">Your Order ID</p>
@@ -1128,7 +1187,10 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
   <div class="admin-bx">
     <div class="admin-head">
       <h2>⚙ DREAMVERSE Admin</h2>
-      <button class="admin-cls" onclick="closeAdmin()">✕</button>
+      <div style="display:flex;gap:0.5rem;">
+        <button class="admin-cls" onclick="adminLogout()" title="Logout" aria-label="Logout">⎋</button>
+        <button class="admin-cls" onclick="closeAdmin()" aria-label="Close admin panel">✕</button>
+      </div>
     </div>
     <!-- Login -->
     <div class="admin-login-box" id="admin-login">
@@ -1183,13 +1245,14 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 <!-- Admin trigger (secret) -->
 <button class="admin-trigger" id="admin-trigger" onclick="openAdmin()">⚙</button>
 
-<button class="sticky-cta" id="sticky-cta" onclick="document.getElementById('templates').scrollIntoView({behavior:'smooth'})">✦ Order a Template — ₹299</button>
+<button class="sticky-cta" id="sticky-cta" onclick="trackEvent('cta_click',{cta_name:'sticky_mobile_cta'});document.getElementById('templates').scrollIntoView({behavior:'smooth'})">✦ Order a Template — ₹299</button>
 <div class="toast" id="toast"></div>
 
 <!-- ══ FIREBASE ══ -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, set, get, update, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 const app = initializeApp({
   apiKey:"AIzaSyDgte3BadtuMmGc9WcIPx6BvHku71UEsFg",
   authDomain:"dreamverse-web-55005.firebaseapp.com",
@@ -1200,7 +1263,16 @@ const app = initializeApp({
   appId:"1:645605828930:web:0679db786e2a678022c0db"
 });
 const db=getDatabase(app);
-window._db=db;window._ref=ref;window._set=set;window._get=get;window._update=update;window._remove=remove;window._fbReady=true;
+const auth=getAuth(app);
+window._db=db;window._ref=ref;window._set=set;window._get=get;window._update=update;window._remove=remove;
+window._auth=auth;window._signIn=signInWithEmailAndPassword;window._signOut=signOut;
+// Tracks real Firebase Auth state — this is what the database rules actually check,
+// not the old client-side password variable.
+onAuthStateChanged(auth,user=>{
+  window._adminAuthed=!!user;
+  window.dispatchEvent(new Event('dv-auth-changed'));
+});
+window._fbReady=true;
 </script>
 
 <script>
@@ -1258,8 +1330,38 @@ const TEMPLATES = [
     ]}
 ];
 
+// Escapes user-supplied text before it's ever inserted via innerHTML.
+// Customer-entered fields (name, requirements, whatsapp, admin-added data)
+// must NEVER go into innerHTML unescaped — this prevents stored XSS where
+// a malicious order could run script in the admin's authenticated session.
+function escapeHTML(str){
+  if(str===undefined||str===null) return '';
+  return String(str).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// ── Analytics (GA4) ──
+// Single choke point for all custom events. Guarded so that if gtag.js
+// fails to load (ad-blocker, offline, etc.) the site keeps working —
+// analytics must never be able to break a customer's order flow.
+// IMPORTANT: never pass PII (name, email, phone, requirements text) as
+// an event parameter — only non-identifying metadata.
+function trackEvent(name,params){
+  try{
+    if(typeof gtag==='function'){ gtag('event',name,params||{}); }
+  }catch(err){ /* analytics must never throw into the app */ }
+}
+
 // ── Helpers ──
 function genId(){return 'DV-'+(1000+Math.floor(Math.random()*9000));}
+// Checks the candidate ID isn't already taken before we commit to it —
+// prevents two customers silently overwriting each other's order.
+function getUniqueOrderId(cb,attempts=5){
+  const candidate=genId();
+  window._get(window._ref(window._db,'orders/'+candidate)).then(snap=>{
+    if(snap.exists()&&attempts>0){ getUniqueOrderId(cb,attempts-1); }
+    else{ cb(candidate); }
+  }).catch(()=>cb(candidate));
+}
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
 function waitFB(cb,r=20){if(window._fbReady){cb();}else if(r>0){setTimeout(()=>waitFB(cb,r-1),150);}else{showToast('Connection error. Try again.');}}
 
@@ -1272,7 +1374,7 @@ function renderCards(){
     track.innerHTML+=`
       <div class="tpl-card">
         <div class="card-img-wrap">
-          <img src="${t.card}" alt="${t.name}" onerror="this.style.background='linear-gradient(135deg,#E8EAF6,#C0C4E0)';this.style.minHeight='220px';">
+          <img src="${t.card}" alt="${t.name}" width="600" height="720" loading="lazy" decoding="async" onerror="this.style.background='linear-gradient(135deg,#E8EAF6,#C0C4E0)';this.style.minHeight='220px';">
           ${badgeHTML}
         </div>
         <div class="card-body">
@@ -1299,11 +1401,26 @@ function renderCards(){
   });
 }
 
+// ── Focus management for modals (accessibility) ──
+// Remembers what was focused before a dialog opened, moves focus into the
+// dialog on open, and restores it on close — so keyboard/screen-reader
+// users aren't dropped outside the dialog or lost when it closes.
+let lastFocusedEl=null;
+function focusIntoDialog(dialogEl){
+  lastFocusedEl=document.activeElement;
+  if(dialogEl) dialogEl.focus();
+}
+function restoreFocus(){
+  if(lastFocusedEl&&typeof lastFocusedEl.focus==='function') lastFocusedEl.focus();
+  lastFocusedEl=null;
+}
+
 // ── Version Modal ──
 let currentModalId='';
 function openModal(id){
   currentModalId=id;
   const t=TEMPLATES.find(x=>x.id===id);if(!t)return;
+  trackEvent('template_view',{template_id:t.id,template_name:t.name});
   document.getElementById('modal-emoji').textContent=t.emoji;
   document.getElementById('modal-title').textContent=t.name+' Collection';
   document.getElementById('modal-subtitle').textContent='Choose a version to preview or order';
@@ -1312,7 +1429,7 @@ function openModal(id){
       return`<div class="ver-card live-card">
         <div><p class="ver-name">${v.label}</p><span class="ver-live-badge">Live</span></div>
         <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
-          <a href="${v.url}" target="_blank" rel="noopener" class="btn-vdemo">Demo <svg width="10" height="10" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="${v.url}" target="_blank" rel="noopener" class="btn-vdemo" onclick="trackEvent('template_preview',{template_id:'${t.id}',template_name:'${t.name}',version:'${v.label}'})">Demo <svg width="10" height="10" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <button class="btn-vorder" onclick="openOrderForm(event,'${t.id}','${v.label}')">Order</button>
         </div></div>`;
     }
@@ -1320,8 +1437,9 @@ function openModal(id){
   }).join('');
   document.getElementById('modal-overlay').classList.add('active');
   document.body.style.overflow='hidden';
+  focusIntoDialog(document.querySelector('#modal-overlay .modal-bx'));
 }
-function closeModal(){document.getElementById('modal-overlay').classList.remove('active');document.body.style.overflow='';}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('active');document.body.style.overflow='';restoreFocus();}
 document.getElementById('modal-close').addEventListener('click',closeModal);
 document.getElementById('modal-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('modal-overlay'))closeModal();});
 
@@ -1331,6 +1449,7 @@ function openOrderForm(e,tid,ver){
   if(e)e.preventDefault();
   const t=TEMPLATES.find(x=>x.id===tid);if(!t)return;
   curTpl=t.name;curVer=ver||(t.versions.find(v=>v.status==='live')?.label||t.name+'-V1');
+  trackEvent('order_started',{template_id:t.id,template_name:t.name,version:curVer,value:299,currency:'INR'});
   document.getElementById('af-template').textContent=t.name;
   document.getElementById('af-version').textContent=curVer;
   document.getElementById('af-price').textContent='₹299';
@@ -1339,10 +1458,12 @@ function openOrderForm(e,tid,ver){
   document.getElementById('modal-overlay').classList.remove('active');
   document.getElementById('order-overlay').classList.add('active');
   document.body.style.overflow='hidden';
+  focusIntoDialog(document.querySelector('#order-overlay .order-bx'));
 }
-function closeOrderForm(){document.getElementById('order-overlay').classList.remove('active');document.body.style.overflow='';}
+function closeOrderForm(){document.getElementById('order-overlay').classList.remove('active');document.body.style.overflow='';restoreFocus();}
 document.getElementById('order-close').addEventListener('click',closeOrderForm);
 document.getElementById('order-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('order-overlay'))closeOrderForm();});
+
 
 // ── Submit Order ──
 function submitOrder(e){
@@ -1353,16 +1474,32 @@ function submitOrder(e){
   const del=document.getElementById('ord-delivery').value;
   const occ=document.getElementById('ord-occasion').value;
   const req=document.getElementById('ord-requirements').value.trim();
-  const oid=genId();
   const now=new Date().toLocaleString('en-IN',{dateStyle:'full',timeStyle:'short'});
   const occStr=occ?new Date(occ).toLocaleDateString('en-IN',{dateStyle:'long'}):'Not specified';
-  waitFB(()=>{ const r=window._ref(window._db,'orders/'+oid); window._set(r,{id:oid,name,email,whatsapp:wp,template:curTpl,version:curVer,status:'pending',delivery:del,occasion:occStr,requirements:req,time:now}).catch(err=>console.error(err)); });
-  const sub=encodeURIComponent(`New DreamVerse Order - ${curTpl} - ${curVer}`);
-  const body=encodeURIComponent(`Order ID: ${oid}\nDate & Time: ${now}\n\n--------------------------------\nCustomer Information\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${wp}\n\n--------------------------------\nTemplate Information\n\nTemplate: ${curTpl}\nVersion: ${curVer}\nPrice: ₹299\n\n--------------------------------\nDelivery Information\n\nDelivery Needed: ${del}\nOccasion Date: ${occStr}\n\n--------------------------------\nRequirements\n\n${req}\n\n--------------------------------\nOrder Source: DREAMVERSE Marketplace`);
-  window.location.href=`mailto:dreamverse.web@gmail.com?subject=${sub}&body=${body}`;
-  setTimeout(()=>{ closeOrderForm(); document.getElementById('success-order-id').textContent=oid; document.getElementById('success-overlay').classList.add('active'); },400);
+  const submitBtn=document.querySelector('#order-form .btn-submit-ord');
+  if(submitBtn){submitBtn.disabled=true;submitBtn.style.opacity='0.6';}
+  waitFB(()=>{
+    getUniqueOrderId(oid=>{
+      const r=window._ref(window._db,'orders/'+oid);
+      window._set(r,{id:oid,name,email,whatsapp:wp,template:curTpl,version:curVer,status:'pending',delivery:del,occasion:occStr,requirements:req,time:now})
+        .then(()=>{
+          trackEvent('order_submitted',{order_id:oid,template_name:curTpl,version:curVer,value:299,currency:'INR'});
+          const sub=encodeURIComponent(`New DreamVerse Order - ${curTpl} - ${curVer}`);
+          const body=encodeURIComponent(`Order ID: ${oid}\nDate & Time: ${now}\n\n--------------------------------\nCustomer Information\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${wp}\n\n--------------------------------\nTemplate Information\n\nTemplate: ${curTpl}\nVersion: ${curVer}\nPrice: ₹299\n\n--------------------------------\nDelivery Information\n\nDelivery Needed: ${del}\nOccasion Date: ${occStr}\n\n--------------------------------\nRequirements\n\n${req}\n\n--------------------------------\nOrder Source: DREAMVERSE Marketplace`);
+          window.location.href=`mailto:dreamverse.web@gmail.com?subject=${sub}&body=${body}`;
+          setTimeout(()=>{
+            closeOrderForm();
+            document.getElementById('success-order-id').textContent=oid;
+            document.getElementById('success-overlay').classList.add('active');
+            focusIntoDialog(document.querySelector('#success-overlay .suc-bx'));
+          },400);
+        })
+        .catch(()=>{ showToast('Order could not be saved — please try again.'); })
+        .finally(()=>{ if(submitBtn){submitBtn.disabled=false;submitBtn.style.opacity='1';} });
+    });
+  });
 }
-function closeSuccess(){document.getElementById('success-overlay').classList.remove('active');document.body.style.overflow='';}
+function closeSuccess(){document.getElementById('success-overlay').classList.remove('active');document.body.style.overflow='';restoreFocus();}
 document.getElementById('success-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('success-overlay'))closeSuccess();});
 
 // ── Copy ID ──
@@ -1377,16 +1514,20 @@ function trackOrder(){
   const inp=document.getElementById('track-input').value.trim().toUpperCase();
   const res=document.getElementById('track-result');
   if(!inp){showToast('Please enter your Order ID');return;}
+  trackEvent('search',{search_type:'order_tracking'});
+  const safeInp=escapeHTML(inp);
   res.style.display='block';res.style.background='var(--lav-bg)';res.style.border='1px solid var(--border)';
   res.innerHTML='<p style="text-align:center;color:var(--text-soft);padding:0.5rem;">🔍 Searching…</p>';
   waitFB(()=>{
     window._get(window._ref(window._db,'orders/'+inp)).then(snap=>{
-      if(!snap.exists()){res.style.background='#FFF0F3';res.style.border='1px solid #FFD6DC';res.innerHTML=`<p style="font-size:0.85rem;color:var(--text-mid);"><strong>❓ Not Found</strong><br>No order with ID <strong>${inp}</strong>. Please check and try again.</p>`;return;}
+      if(!snap.exists()){res.style.background='#FFF0F3';res.style.border='1px solid #FFD6DC';res.innerHTML=`<p style="font-size:0.85rem;color:var(--text-mid);"><strong>❓ Not Found</strong><br>No order with ID <strong>${safeInp}</strong>. Please check and try again.</p>`;return;}
       const o=snap.val();
       const cfg={pending:{bg:'#FFFBEB',b:'#FDE68A',icon:'🕐',lbl:'Order Pending',msg:"We're reviewing your order and will confirm shortly."},confirmed:{bg:'#F0FDF4',b:'#BBF7D0',icon:'✅',lbl:'Order Confirmed',msg:"Your order is confirmed and we're working on it!"},delivered:{bg:'#EEF2FF',b:'#C7D2FE',icon:'📦',lbl:'Order Delivered',msg:"Your website has been delivered! Check WhatsApp or Email."},cancelled:{bg:'#FFF0F3',b:'#FFD6DC',icon:'❌',lbl:'Order Cancelled',msg:"This order was cancelled. Contact us if you have questions."}};
       const c=cfg[o.status]||cfg.pending;
       res.style.background=c.bg;res.style.border=`1px solid ${c.b}`;
-      res.innerHTML=`<p style="font-size:0.88rem;color:var(--text-dark);margin-bottom:0.4rem;"><strong>${c.icon} ${c.lbl}</strong></p><p style="font-size:0.82rem;color:var(--text-mid);margin-bottom:0.4rem;">${c.msg}</p><p style="font-size:0.76rem;color:var(--text-soft);">Template: <strong>${o.template||'—'}</strong> · Version: <strong>${o.version||'—'}</strong></p>`;
+      const safeTpl=escapeHTML(o.template||'—');
+      const safeVer=escapeHTML(o.version||'—');
+      res.innerHTML=`<p style="font-size:0.88rem;color:var(--text-dark);margin-bottom:0.4rem;"><strong>${c.icon} ${c.lbl}</strong></p><p style="font-size:0.82rem;color:var(--text-mid);margin-bottom:0.4rem;">${c.msg}</p><p style="font-size:0.76rem;color:var(--text-soft);">Template: <strong>${safeTpl}</strong> · Version: <strong>${safeVer}</strong></p>`;
     }).catch(()=>{res.innerHTML='<p style="color:#E53E3E;font-size:0.85rem;">Connection error. Please try again.</p>';});
   });
 }
@@ -1395,12 +1536,14 @@ function trackOrder(){
 function handleInquiry(e){
   e.preventDefault();
   const n=document.getElementById('inq-name').value,em=document.getElementById('inq-email').value,tp=document.getElementById('inq-type').value,vi=document.getElementById('inq-vision').value;
+  trackEvent('cta_click',{cta_name:'custom_inquiry_submit',inquiry_type:tp});
   window.location.href=`mailto:dreamverse.web@gmail.com?subject=${encodeURIComponent('Custom Website Inquiry — '+tp)}&body=${encodeURIComponent(`Hi DREAMVERSE,\n\nName: ${n}\nEmail: ${em}\nType: ${tp}\n\nVision:\n${vi}`)}`;
   showToast('Opening your email app…');
 }
 function handleContact(e){
   e.preventDefault();
   const n=document.getElementById('ct-name').value,em=document.getElementById('ct-email').value,m=document.getElementById('ct-msg').value;
+  trackEvent('contact_click',{contact_method:'contact_form'});
   window.location.href=`mailto:dreamverse.web@gmail.com?subject=${encodeURIComponent('Message from '+n+' via DREAMVERSE')}&body=${encodeURIComponent(`Hi DREAMVERSE,\n\nName: ${n}\nEmail: ${em}\n\nMessage:\n${m}`)}`;
   showToast('Opening your email app…');
 }
@@ -1409,9 +1552,14 @@ function handleContact(e){
 function toggleFaq(btn){const item=btn.closest('.faq-item');const was=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open');}
 
 // ── Admin Panel ──
-const ADMIN_PASS = 'dreamverse2025';
+// Firebase Auth account email for the admin — must be created once in
+// Firebase Console → Authentication → Users. The database rules only trust
+// this real sign-in, not a client-side string comparison.
+const ADMIN_EMAIL = 'dreamverse.web@gmail.com';
 let adminLoggedIn = false;
 let currentAdminTab = 'pending';
+
+window.addEventListener('dv-auth-changed',()=>{ adminLoggedIn=!!window._adminAuthed; });
 
 function openAdmin(){
   document.getElementById('admin-overlay').classList.add('active');
@@ -1428,12 +1576,37 @@ document.getElementById('admin-overlay').addEventListener('click',e=>{
 
 function adminLogin(){
   const pass=document.getElementById('admin-pass').value;
-  if(pass===ADMIN_PASS){
-    adminLoggedIn=true;
-    showAdminBody();
-  } else {
-    document.getElementById('admin-err').style.display='block';
-  }
+  const btn=document.querySelector('.btn-admin-login');
+  document.getElementById('admin-err').style.display='none';
+  if(!pass){document.getElementById('admin-err').textContent='Enter password.';document.getElementById('admin-err').style.display='block';return;}
+  if(btn){btn.disabled=true;btn.textContent='Signing in…';}
+  waitFB(()=>{
+    window._signIn(window._auth,ADMIN_EMAIL,pass).then(()=>{
+      adminLoggedIn=true;
+      document.getElementById('admin-pass').value='';
+      trackEvent('admin_login',{});
+      trackEvent('login',{method:'firebase_email_password'}); // GA4 recommended event, backed by Firebase Auth
+      showAdminBody();
+    }).catch(()=>{
+      document.getElementById('admin-err').textContent='Incorrect password. Try again.';
+      document.getElementById('admin-err').style.display='block';
+    }).finally(()=>{
+      if(btn){btn.disabled=false;btn.textContent='Login';}
+    });
+  });
+}
+
+function adminLogout(){
+  waitFB(()=>{
+    window._signOut(window._auth).then(()=>{
+      adminLoggedIn=false;
+      document.getElementById('admin-body').classList.remove('visible');
+      document.getElementById('admin-login').style.display='block';
+      trackEvent('admin_logout',{});
+      closeAdmin();
+      showToast('Logged out of admin panel');
+    });
+  });
 }
 
 function showAdminBody(){
@@ -1462,23 +1635,34 @@ function renderAdminOrders(status){
       const filtered=all.filter(o=>o.status===status);
       if(!filtered.length){el.innerHTML=`<div class="admin-empty">No ${status} orders yet.</div>`;return;}
       filtered.sort((a,b)=>new Date(b.time)-new Date(a.time));
-      el.innerHTML=filtered.map(o=>`
+      el.innerHTML=filtered.map(o=>{
+        const safeStatus=escapeHTML(o.status);
+        const safeId=escapeHTML(o.id);
+        const safeTpl=escapeHTML(o.template||'—');
+        const safeVer=escapeHTML(o.version||'—');
+        const safeName=escapeHTML(o.name||'—');
+        const safeWp=escapeHTML(o.whatsapp||'—');
+        const safeTime=escapeHTML(o.time||'—');
+        const safeDelivery=escapeHTML(o.delivery||'—');
+        const safeReq=o.requirements?escapeHTML(o.requirements.substring(0,120))+(o.requirements.length>120?'…':''):'';
+        return `
         <div class="order-row">
           <div class="order-row-top">
-            <span class="order-row-id">${o.id}</span>
-            <span class="status-pill ${o.status}">${o.status.toUpperCase()}</span>
+            <span class="order-row-id">${safeId}</span>
+            <span class="status-pill ${safeStatus}">${safeStatus.toUpperCase()}</span>
           </div>
-          <p class="order-row-tpl">📦 ${o.template||'—'} · ${o.version||'—'}</p>
-          <p class="order-row-cust">👤 ${o.name||'—'} &nbsp;|&nbsp; 📱 ${o.whatsapp||'—'}</p>
-          <p class="order-row-cust">📅 ${o.time||'—'} &nbsp;|&nbsp; 🚚 ${o.delivery||'—'}</p>
-          ${o.requirements?`<p style="font-size:0.76rem;color:var(--text-soft);margin:0.3rem 0 0.7rem;line-height:1.5;">📝 ${o.requirements.substring(0,120)}${o.requirements.length>120?'…':''}</p>`:''}
+          <p class="order-row-tpl">📦 ${safeTpl} · ${safeVer}</p>
+          <p class="order-row-cust">👤 ${safeName} &nbsp;|&nbsp; 📱 ${safeWp}</p>
+          <p class="order-row-cust">📅 ${safeTime} &nbsp;|&nbsp; 🚚 ${safeDelivery}</p>
+          ${safeReq?`<p style="font-size:0.76rem;color:var(--text-soft);margin:0.3rem 0 0.7rem;line-height:1.5;">📝 ${safeReq}</p>`:''}
           <div class="order-actions-row">
             ${o.status==='pending'?`<button class="btn-st btn-confirm" onclick="updateStatus('${o.id}','confirmed')">✅ Confirm</button>`:''}
             ${o.status==='confirmed'?`<button class="btn-st btn-deliver" onclick="updateStatus('${o.id}','delivered')">📦 Delivered</button>`:''}
             ${(o.status==='pending'||o.status==='confirmed')?`<button class="btn-st btn-cancel-o" onclick="cancelOrd('${o.id}')">❌ Cancel</button>`:''}
             <button class="btn-st btn-del-o" onclick="deleteOrd('${o.id}')">🗑 Delete</button>
           </div>
-        </div>`).join('');
+        </div>`;
+      }).join('');
     }).catch(()=>{el.innerHTML=`<div class="admin-empty" style="color:#E53E3E;">Connection error.</div>`;});
   });
 }
