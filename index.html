@@ -787,6 +787,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 .admin-add-form h4{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--text-dark);margin-bottom:1rem;}
 .admin-add-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;}
 .admin-add-form input,.admin-add-form select,.admin-add-form textarea{width:100%;padding:0.62rem 0.88rem;border:1px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:0.82rem;color:var(--text-dark);background:var(--lav-bg);outline:none;-webkit-appearance:none;appearance:none;}
+.admin-add-label{font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;}
 .admin-add-form textarea{min-height:65px;resize:vertical;margin-bottom:0.75rem;}
 .btn-add-ord{padding:0.6rem 1.5rem;background:linear-gradient(135deg,var(--sky),var(--rose));color:#fff;border:none;border-radius:30px;font-family:var(--sans);font-size:0.82rem;font-weight:500;cursor:pointer;transition:all 0.3s;}
 .btn-add-ord:hover{transform:translateY(-1px);}
@@ -842,7 +843,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
     <li><a href="#contact-section">Contact</a></li>
     <li><a href="#custom-section" class="nav-cta" onclick="trackEvent('cta_click',{cta_name:'nav_get_quote'})">Get a Quote</a></li>
   </ul>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -1053,7 +1054,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
       <input type="text" id="track-input" placeholder="Enter Order ID (e.g. DV-1234)" maxlength="10">
       <button onclick="trackOrder()">Track</button>
     </div>
-    <div id="track-result" style="display:none;margin-top:1.3rem;border-radius:12px;padding:1.2rem;"></div>
+    <div id="track-result" style="display:none;margin-top:1.3rem;border-radius:12px;padding:1.2rem;" aria-live="polite"></div>
   </div>
 </section>
 
@@ -1197,7 +1198,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
       <label for="admin-pass">Admin Password</label>
       <input type="password" id="admin-pass" placeholder="Enter password" onkeydown="if(event.key==='Enter')adminLogin()">
       <button class="btn-admin-login" onclick="adminLogin()">Login</button>
-      <p class="admin-err" id="admin-err">Incorrect password. Try again.</p>
+      <p class="admin-err" id="admin-err" aria-live="polite">Incorrect password. Try again.</p>
     </div>
     <!-- Dashboard -->
     <div class="admin-body-box" id="admin-body">
@@ -1216,16 +1217,16 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
         <div class="admin-add-form">
           <h4>Add / Update Order</h4>
           <div class="admin-add-row">
-            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Order ID</label><input type="text" id="add-orderid" placeholder="DV-1234"></div>
-            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Customer Name</label><input type="text" id="add-name" placeholder="Customer name"></div>
+            <div><label class="admin-add-label">Order ID</label><input type="text" id="add-orderid" placeholder="DV-1234"></div>
+            <div><label class="admin-add-label">Customer Name</label><input type="text" id="add-name" placeholder="Customer name"></div>
           </div>
           <div class="admin-add-row">
-            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Template</label><input type="text" id="add-template" placeholder="Birthday Surprise"></div>
-            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Version</label><input type="text" id="add-version" placeholder="V1"></div>
+            <div><label class="admin-add-label">Template</label><input type="text" id="add-template" placeholder="Birthday Surprise"></div>
+            <div><label class="admin-add-label">Version</label><input type="text" id="add-version" placeholder="V1"></div>
           </div>
           <div class="admin-add-row">
-            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">WhatsApp</label><input type="text" id="add-wp" placeholder="+91 98765 43210"></div>
-            <div><label style="font-size:0.68rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:0.3rem;">Status</label>
+            <div><label class="admin-add-label">WhatsApp</label><input type="text" id="add-wp" placeholder="+91 98765 43210"></div>
+            <div><label class="admin-add-label">Status</label>
               <select id="add-status">
                 <option value="pending">Pending</option>
                 <option value="confirmed">Confirmed</option>
@@ -1246,7 +1247,7 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
 <button class="admin-trigger" id="admin-trigger" onclick="openAdmin()">⚙</button>
 
 <button class="sticky-cta" id="sticky-cta" onclick="trackEvent('cta_click',{cta_name:'sticky_mobile_cta'});document.getElementById('templates').scrollIntoView({behavior:'smooth'})">✦ Order a Template — ₹299</button>
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ══ FIREBASE ══ -->
 <script type="module">
@@ -1268,8 +1269,16 @@ window._db=db;window._ref=ref;window._set=set;window._get=get;window._update=upd
 window._auth=auth;window._signIn=signInWithEmailAndPassword;window._signOut=signOut;
 // Tracks real Firebase Auth state — this is what the database rules actually check,
 // not the old client-side password variable.
+// _authResolved flips true the FIRST time onAuthStateChanged reports a result
+// (null or a user). This is distinct from _fbReady: the SDK can be initialized
+// (_fbReady=true) before the async session check (IndexedDB) has actually
+// finished, so code that needs to know "are we logged in?" must wait for
+// _authResolved, not just _fbReady, or it can wrongly treat an already-signed-in
+// admin as logged out.
+window._authResolved=false;
 onAuthStateChanged(auth,user=>{
   window._adminAuthed=!!user;
+  window._authResolved=true;
   window.dispatchEvent(new Event('dv-auth-changed'));
 });
 window._fbReady=true;
@@ -1364,6 +1373,11 @@ function getUniqueOrderId(cb,attempts=5){
 }
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
 function waitFB(cb,r=20){if(window._fbReady){cb();}else if(r>0){setTimeout(()=>waitFB(cb,r-1),150);}else{showToast('Connection error. Try again.');}}
+// Waits for the FIRST real onAuthStateChanged result (see _authResolved above)
+// before code makes a logged-in/out decision. Fails open after ~3s so the UI
+// never hangs forever if something upstream goes wrong — worst case it falls
+// back to whatever window._adminAuthed currently holds.
+function waitAuthResolved(cb,r=20){if(window._authResolved){cb();}else if(r>0){setTimeout(()=>waitAuthResolved(cb,r-1),150);}else{cb();}}
 
 // ── Render Cards ──
 function renderCards(){
@@ -1559,12 +1573,41 @@ const ADMIN_EMAIL = 'dh7441466@gmail.com'; // Login-only account. dreamverse.web
 let adminLoggedIn = false;
 let currentAdminTab = 'pending';
 
-window.addEventListener('dv-auth-changed',()=>{ adminLoggedIn=!!window._adminAuthed; });
+window.addEventListener('dv-auth-changed',()=>{ adminLoggedIn=!!window._adminAuthed; syncAdminUI(); });
+
+// Single source of truth for what the admin overlay should currently show.
+// Called on open AND whenever auth state changes, so the dashboard/login
+// view can never go stale relative to the real Firebase Auth state (e.g.
+// the session resolving a moment after the panel was opened, or the admin
+// getting signed out in another tab).
+function syncAdminUI(){
+  if(!document.getElementById('admin-overlay').classList.contains('active'))return;
+  if(adminLoggedIn){
+    // Guard against a redundant re-fetch: a successful login calls
+    // showAdminBody() directly AND triggers onAuthStateChanged (which also
+    // calls syncAdminUI via the dv-auth-changed listener). Skip the second
+    // call if the dashboard is already showing.
+    if(!document.getElementById('admin-body').classList.contains('visible')) showAdminBody();
+  }
+  else{
+    document.getElementById('admin-body').classList.remove('visible');
+    document.getElementById('admin-login').style.display='block';
+  }
+}
 
 function openAdmin(){
   document.getElementById('admin-overlay').classList.add('active');
   document.body.style.overflow='hidden';
-  if(adminLoggedIn) showAdminBody();
+  // BUG FIX: previously checked the local `adminLoggedIn` flag immediately,
+  // which is only updated by onAuthStateChanged — an async check (IndexedDB)
+  // that may not have resolved yet on a fresh page load. An admin with a
+  // valid, already-persisted session could open the panel during that
+  // window and get stuck looking at the login form despite being properly
+  // authenticated. Now we wait for the real auth result first.
+  waitAuthResolved(()=>{
+    adminLoggedIn=!!window._adminAuthed;
+    syncAdminUI();
+  });
 }
 function closeAdmin(){
   document.getElementById('admin-overlay').classList.remove('active');
@@ -1587,8 +1630,21 @@ function adminLogin(){
       trackEvent('admin_login',{});
       trackEvent('login',{method:'firebase_email_password'}); // GA4 recommended event, backed by Firebase Auth
       showAdminBody();
-    }).catch(()=>{
-      document.getElementById('admin-err').textContent='Incorrect password. Try again.';
+    }).catch(err=>{
+      // BUG FIX: previously every failure (wrong password, wrong/unknown
+      // email, no network, too many attempts, disabled account) showed the
+      // same "Incorrect password" text, which made real configuration or
+      // connectivity problems indistinguishable from a typo — the exact
+      // "Auth is configured but I still can't get in" symptom this audit
+      // was asked to explain. Now the message matches the actual cause.
+      const code=err&&err.code;
+      const msg =
+        code==='auth/too-many-requests' ? 'Too many attempts. Wait a bit and try again.' :
+        code==='auth/network-request-failed' ? 'Network error — check your connection and try again.' :
+        (code==='auth/user-disabled') ? 'This admin account has been disabled in Firebase.' :
+        (code==='auth/invalid-credential'||code==='auth/wrong-password'||code==='auth/user-not-found') ? 'Incorrect password. Try again.' :
+        'Sign-in failed. Check Firebase Authentication setup and try again.';
+      document.getElementById('admin-err').textContent=msg;
       document.getElementById('admin-err').style.display='block';
     }).finally(()=>{
       if(btn){btn.disabled=false;btn.textContent='Login';}
@@ -1725,8 +1781,14 @@ document.getElementById('footer-bottom').addEventListener('click',()=>{
 });
 
 // ── Nav ──
-document.getElementById('nav-hamburger').addEventListener('click',()=>document.getElementById('nav-links').classList.toggle('open'));
-document.getElementById('nav-links').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav-links').classList.remove('open')));
+document.getElementById('nav-hamburger').addEventListener('click',()=>{
+  const open=document.getElementById('nav-links').classList.toggle('open');
+  document.getElementById('nav-hamburger').setAttribute('aria-expanded',open?'true':'false');
+});
+document.getElementById('nav-links').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('nav-links').classList.remove('open');
+  document.getElementById('nav-hamburger').setAttribute('aria-expanded','false');
+}));
 window.addEventListener('scroll',()=>{
   const y=window.scrollY;
   document.getElementById('main-nav').classList.toggle('scrolled',y>60);
@@ -1736,6 +1798,21 @@ window.addEventListener('scroll',()=>{
 
 // ── ESC ──
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeOrderForm();closeSuccess();closeAdmin();}});
+
+// ── Focus trap for open dialogs ──
+// Keeps Tab/Shift+Tab cycling inside whichever dialog overlay is currently
+// active, instead of letting keyboard focus escape into the page behind it.
+const DIALOG_OVERLAY_IDS=['modal-overlay','order-overlay','success-overlay','admin-overlay'];
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Tab')return;
+  const activeOverlay=DIALOG_OVERLAY_IDS.map(id=>document.getElementById(id)).find(o=>o&&o.classList.contains('active'));
+  if(!activeOverlay)return;
+  const focusable=activeOverlay.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])');
+  if(!focusable.length)return;
+  const first=focusable[0],last=focusable[focusable.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+});
 
 // ── Reveal ──
 const io=new IntersectionObserver(entries=>{
