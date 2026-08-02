@@ -409,6 +409,7 @@ h1.hero-title .hero-highlight{
 .badge-hot{background:rgba(212,116,138,0.9);color:#fff;}
 .badge-new{background:rgba(91,107,174,0.9);color:#fff;}
 .badge-trend{background:rgba(212,168,85,0.9);color:#fff;}
+.badge-free{background:rgba(167,225,178,0.92);color:#1D6B3A;}
 
 /* Card body */
 .card-body{padding:1rem 1.1rem 1.2rem;}
@@ -437,6 +438,9 @@ h1.hero-title .hero-highlight{
 }
 .card-price-old{
   font-size:0.75rem;color:var(--text-light);text-decoration:line-through;
+}
+.card-price-free{
+  background:none;-webkit-text-fill-color:#1D9A4B;color:#1D9A4B;
 }
 .card-btns{display:flex;gap:0.5rem;}
 .btn-card-versions{
@@ -1123,8 +1127,8 @@ footer{background:var(--text-dark);padding:2.5rem 5%;}
     <p class="modal-sub" id="modal-subtitle"></p>
     <div class="ver-list" id="versions-list"></div>
     <div class="modal-footer">
-      <div><p class="modal-from">Starting From</p><p class="modal-price">₹299</p></div>
-      <button class="btn-modal-order" onclick="openOrderForm(event,currentModalId,'')">Order Now</button>
+      <div><p class="modal-from">Starting From</p><p class="modal-price" id="modal-price">₹299</p></div>
+      <button class="btn-modal-order" id="modal-order-btn" onclick="openOrderForm(event,currentModalId,'')">Order Now</button>
     </div>
   </div>
 </div>
@@ -1336,6 +1340,16 @@ const TEMPLATES = [
       {label:"CrushVerse-V6",status:"soon"},{label:"CrushVerse-V7",status:"soon"},
       {label:"CrushVerse-V8",status:"soon"},{label:"CrushVerse-V9",status:"soon"},
       {label:"CrushVerse-V10",status:"soon"}
+    ]},
+  { id:"freebie", name:"Just Because", emoji:"🎁", tag:"Freebie", card:"card-free.png",
+    badge:"free", badgeText:"🟢 FREE", rating:"4.9", ratingCount:"128", originalPrice:null, isFree:true,
+    desc:"A simple, heartfelt free template to say something sweet — no cost, just because.",
+    versions:[
+      {label:"Just-Because-V1",status:"live",url:"https://dream-verse.github.io/DV-WISHES-1/"},
+      {label:"Just-Because-V3",status:"soon"},{label:"Just-Because-V4",status:"soon"},
+      {label:"Just-Because-V5",status:"soon"},{label:"Just-Because-V6",status:"soon"},
+      {label:"Just-Because-V7",status:"soon"},{label:"Just-Because-V8",status:"soon"},
+      {label:"Just-Because-V9",status:"soon"},{label:"Just-Because-V10",status:"soon"}
     ]}
 ];
 
@@ -1385,6 +1399,9 @@ function renderCards(){
   TEMPLATES.forEach(t=>{
     const badgeHTML=t.badge?`<span class="card-badge badge-${t.badge}">${t.badgeText}</span>`:'';
     const origHTML=t.originalPrice?`<span class="card-price-old">${t.originalPrice}</span>`:'';
+    const priceHTML=t.isFree?`<span class="card-price card-price-free">FREE</span>`:`<span class="card-price">₹299</span>`;
+    const orderLabel=t.isFree?'Get Free':'Order Now';
+    const orderOnClick=t.isFree?`handleFreeClick('${t.id}')`:`openOrderForm(event,'${t.id}','')`;
     track.innerHTML+=`
       <div class="tpl-card">
         <div class="card-img-wrap">
@@ -1400,7 +1417,7 @@ function renderCards(){
             <span class="count">(${t.ratingCount})</span>
           </div>
           <div class="card-price-row">
-            <span class="card-price">₹299</span>
+            ${priceHTML}
             ${origHTML}
           </div>
           <div class="card-btns">
@@ -1408,7 +1425,7 @@ function renderCards(){
               <svg width="10" height="10" viewBox="0 0 11 11" fill="none"><path d="M1 3h9M1 5.5h9M1 8h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
               Versions
             </button>
-            <button class="btn-card-order" onclick="openOrderForm(event,'${t.id}','')">Order Now</button>
+            <button class="btn-card-order" onclick="${orderOnClick}">${orderLabel}</button>
           </div>
         </div>
       </div>`;
@@ -1429,6 +1446,18 @@ function restoreFocus(){
   lastFocusedEl=null;
 }
 
+// ── Free template click (no order flow — just grab the live version) ──
+function handleFreeClick(id){
+  const t=TEMPLATES.find(x=>x.id===id);if(!t)return;
+  const live=t.versions.find(v=>v.status==='live');
+  if(live){
+    trackEvent('template_get_free',{template_id:t.id,template_name:t.name,version:live.label});
+    window.open(live.url,'_blank','noopener');
+  }else{
+    openModal(id);
+  }
+}
+
 // ── Version Modal ──
 let currentModalId='';
 function openModal(id){
@@ -1438,8 +1467,18 @@ function openModal(id){
   document.getElementById('modal-emoji').textContent=t.emoji;
   document.getElementById('modal-title').textContent=t.name+' Collection';
   document.getElementById('modal-subtitle').textContent='Choose a version to preview or order';
+  document.getElementById('modal-price').textContent=t.isFree?'FREE':'₹299';
+  const modalBtn=document.getElementById('modal-order-btn');
+  modalBtn.textContent=t.isFree?'Get Free':'Order Now';
+  modalBtn.onclick=t.isFree?(()=>handleFreeClick(t.id)):((e)=>openOrderForm(e,currentModalId,''));
   document.getElementById('versions-list').innerHTML=t.versions.map(v=>{
     if(v.status==='live'){
+      if(t.isFree){
+        return`<div class="ver-card live-card">
+        <div><p class="ver-name">${v.label}</p><span class="ver-live-badge">Live</span></div>
+        <a href="${v.url}" target="_blank" rel="noopener" class="btn-vdemo" onclick="trackEvent('template_get_free',{template_id:'${t.id}',template_name:'${t.name}',version:'${v.label}'})">Get Free <svg width="10" height="10" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>`;
+      }
       return`<div class="ver-card live-card">
         <div><p class="ver-name">${v.label}</p><span class="ver-live-badge">Live</span></div>
         <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
